@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:font-family="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Tạo bảng cơ bản</title>
-
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width:100%
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align:left;
+            padding:    8px;
+        }
+        tr:nth-child(odd) {
+            background-color:darkgray;
+        }
+    </style>
 </head>
 <body>
-    <table {
-            font-family: arial, sans-serif;>
+    <table>
         <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
+            <th> <strong> Company </strong></th>
+            <th> <strong> Contact </strong></th>
+            <th> <strong> Country </strong></th>
         </tr>
         <tr>
             <td>Alfreds Futterkiste</td>
