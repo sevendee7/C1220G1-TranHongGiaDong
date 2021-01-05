@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Hiển thị kết quả dùng hàng alert-->
+    <button type="button" onclick="hienthi();">Click me!</button>
+    <script>
+        function hienthi(){
+            alert("Xin chào Đông!");
+        }
+    </script>
+<br><br>
+<!--Hiển thị kết quả qua sử dụng thẻ HTML-->
+    <div id="hienthidiv"></div>
+    <button type="button" onclick="hienthidiv()">Click me!</button>
+    <script>
+        function hienthidiv(){
+            document.getElementById('hienthidiv').innerHTML = "<b>Xin Chào Đông!</b>";
+        }
+    </script>
+<br><br>
+<!--Hiển thị kết quả qua hàm document.write-->
+    <button type="button" onclick="hienthi2();">Click me!</button>
+    <script>
+        function hienthi2(){
+            document.write("Xin Chào Đông!");
+        }
+    </script>
+<br><br>
+<!--Hiển thị kết quả trong console bằng hàm console.log-->
+    <button type="button" onclick="hienthiconsole();">Click me!</button>
+    <script>
+        function hienthiconsole(){
+            console.log("Xin chào");
+        }
+    </script>
+
+</body>
+</html>
