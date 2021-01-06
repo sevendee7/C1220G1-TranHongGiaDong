@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form>
+        <table width="50%">
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="input" placeholder="Enter amount"/>
+                </td>
+                <td align="center">
+                    <select id="dropdown">
+                        <option>VietNam</option>
+                        <option>USD</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <select id="dropdown2">
+                        <option>USD</option>
+                        <option>VietNam</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="button" onclick="convert()">Convert</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p id="result"></p>
+    <script>
+
+        function convert () {
+            let a = document.getElementById("input").value;
+            let b = document.getElementById("dropdown").value;
+            let c = document.getElementById("dropdown2").value;
+            let result;
+            if ((b=="VietNam") && (c=="USD")){
+                result = parseInt(a)/23000;
+            }
+            if ((b=="USD") && (c=="VietNam"))
+            {
+                result = parseInt(a)*23000;
+            }
+            document.getElementById('result').innerText= result;
+        }
+    </script>
+</body>
+</html>
