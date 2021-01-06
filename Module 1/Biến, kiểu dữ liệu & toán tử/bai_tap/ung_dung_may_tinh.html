@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 text-align="center">CALCULATOR</h1>
+<form>
+    <input type = "text" id = "number1" placeholder="First number">
+    <input type = "text" id = "number2" placeholder="Second number">
+    <p id="show"></p>
+    <button type = "button" onclick="cong()">Addition(+)</button>
+    <button type = "button" onclick="tru()">Subtraction(-)</button>
+    <button type = "button" onclick="nhan()">Multiplication(x)</button>
+    <button type = "button" onclick="chia()">Division(/)</button>
+    <input type="reset" value="Nhập lại">
+    <br>
+    <script>
+        function cong(){
+            let a1 = document.getElementById("number1").value;
+            let b1 = document.getElementById("number2").value;
+            let c1 = parseInt(a1) + parseInt(b1);
+            document.getElementById("show").innerHTML = (a1+" + "+b1+" = "+c1);
+        }
+        function tru(){
+            let a2 = document.getElementById("number1").value;
+            let b2 = document.getElementById("number2").value;
+            let c2 = parseInt(a2) - parseInt(b2);
+            document.getElementById("show").innerHTML = (a2+" - "+b2+" = "+c2);
+        }
+        function nhan(){
+            let a3 = document.getElementById("number1").value;
+            let b3 = document.getElementById("number2").value;
+            let c3 = parseInt(a3) * parseInt(b3);
+            document.getElementById("show").innerHTML = (a3+" x "+b3+" = "+c3);
+        }
+        function chia(){
+            let a4 = document.getElementById("number1").value;
+            let b4 = document.getElementById("number2").value;
+            let c4 = parseInt(a4) / parseInt(b4);
+            document.getElementById("show").innerHTML = (a4+" / "+b4+" = "+c4);
+        }
+    </script>
+</body>
+</html>
