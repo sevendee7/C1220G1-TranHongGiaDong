@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title></title>
 </head>
 <body>
-$END$
+    <table>
+        <tr>
+            <input id="month" type="text" placeholder="Nhập tháng">
+            <button type="button" onclick="tinh()">Tính số ngày</button>
+            <b id="show"></b>
+        </tr>
+    </table>
+    <script>
+        function tinh() {
+            let thang = parseInt(document.getElementById("month").value);
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.getElementById("show").innerText= "Tháng " +thang + " có 31 ngày";
+                    break;
+                case 2:
+                    document.getElementById("show").innerText= "Tháng " +thang + " có 28 hoặc 29 ngày";
+                    break;
+                default:
+                    document.getElementById("show").innerText= "Tháng " +thang + " có 30 ngày"
+            }
+        }
+    </script>
 </body>
 </html>

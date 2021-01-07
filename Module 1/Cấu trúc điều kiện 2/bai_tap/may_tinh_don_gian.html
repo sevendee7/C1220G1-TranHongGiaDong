@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table, th, td {
+            width: 300px;
+            height: 60px;
+            /*border: 1px solid black;*/
+            color: blue;
+        }
+        .nut {
+            color:blue;
+            width:100%;
+            height:100%;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+    <table>
+        <tr>
+            <td id="showResult" colspan="4" align="right"></td>
+        </tr>
+        <tr>
+            <td class="item1">
+                <button class="nut" type="button" id="one" onclick="numbOne()">1</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="two" onclick="numbTwo()">2</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="three" onclick="numbThree()">3</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="plus" onclick="Addition()">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="nut" type="button" id="four" onclick="numbFour()">4</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="five" onclick="numbFive()">5</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="six" onclick="numbSix()">6</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="subtract" onclick="Subtraction()">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="nut" type="button" id="seven" onclick="numbSeven()">7</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="eight" onclick="numbEight()">8</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="nine" onclick="numbNine()">9</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="muti" onclick="numbMuti()">X</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="nut" type="reset" id="reset" onclick="resetC()">C</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="zero" onclick="numbZero()">0</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="equal" onclick="equalTo()">=</button>
+            </td>
+            <td>
+                <button class="nut" type="button" id="division" onclick="divisionBy()">/</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+    </script>
 </body>
 </html>

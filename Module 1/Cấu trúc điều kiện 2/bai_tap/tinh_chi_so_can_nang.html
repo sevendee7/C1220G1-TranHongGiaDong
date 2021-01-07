@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tính chỉ số cân nặng</title>
 </head>
 <body>
-$END$
+    <table border="7px">
+        <caption>Body analysis</caption>
+        <tr>
+            <td>
+                <input id="height" type="text" placeholder="Enter your height (m)"/>
+            </td>
+            <td>
+                <input id="weight" type="text" placeholder="Enter your weight (kg)"/>
+            </td>
+    </table>
+    <br><br>
+    <button type="button" onclick="run()">Analyse</button>
+    <b id="result"></b>
+    <script>
+        function run() {
+            let chieuCao = parseFloat(document.getElementById("height").value);
+            let canNang = parseInt(document.getElementById("weight").value);
+            let number = canNang/(chieuCao*chieuCao);
+            if (number>=30) {
+                document.getElementById("result").innerText = " You are Obese";
+            } else if ((number>=25) && (number<30)) {
+                document.getElementById("result").innerText = "You are Overweight";
+            } else if ((number>=18.5) && (number<25)) {
+                document.getElementById("result").innerText = "You are Normal";
+            } else {
+                document.getElementById("result").innerText = "You are Underweight"
+            }
+        }
+    </script>
 </body>
 </html>
