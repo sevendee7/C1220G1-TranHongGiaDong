@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+table{
+    border: 2px solid black;
+    margin: 10px auto;
+}
+table tr td{
+    padding: 4px;
+}
+table tr td button{
+
+    background: darkgray;
+}
