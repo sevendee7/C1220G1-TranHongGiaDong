@@ -8,10 +8,11 @@
         table, th, td {
             width: 300px;
             height: 60px;
-            /*border: 1px solid black;*/
+            border: 1px solid grey;
             color: blue;
         }
         .nut {
+            background-color: palegoldenrod;
             color:blue;
             width:100%;
             height:100%;
@@ -20,69 +21,69 @@
     </style>
 </head>
 <body>
+    <form id="maytinh">
     <table>
         <tr>
-            <td id="showResult" colspan="4" align="right"></td>
+            <td colspan="4"><input  style="width:300px;height:50px;" readonly id="showResult" /></td>
         </tr>
         <tr>
             <td class="item1">
-                <button class="nut" type="button" id="one" onclick="numbOne()">1</button>
+                <input class="nut" type="button" id="one" onclick="numbOne()" value="1"/>
             </td>
             <td>
-                <button class="nut" type="button" id="two" onclick="numbTwo()">2</button>
+                <input class="nut" type="button" id="two" onclick="numbTwo()" value="2"/>
             </td>
             <td>
-                <button class="nut" type="button" id="three" onclick="numbThree()">3</button>
+                <input class="nut" type="button" id="three" onclick="numbThree()" value="3"/>
             </td>
             <td>
-                <button class="nut" type="button" id="plus" onclick="Addition()">+</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="nut" type="button" id="four" onclick="numbFour()">4</button>
-            </td>
-            <td>
-                <button class="nut" type="button" id="five" onclick="numbFive()">5</button>
-            </td>
-            <td>
-                <button class="nut" type="button" id="six" onclick="numbSix()">6</button>
-            </td>
-            <td>
-                <button class="nut" type="button" id="subtract" onclick="Subtraction()">-</button>
+                <input class="nut" type="button" id="plus" onclick="Addition()" value="+"/>
             </td>
         </tr>
         <tr>
             <td>
-                <button class="nut" type="button" id="seven" onclick="numbSeven()">7</button>
+                <input class="nut" type="button" id="four" onclick="numbFour()" value="4"/>
             </td>
             <td>
-                <button class="nut" type="button" id="eight" onclick="numbEight()">8</button>
+                <input class="nut" type="button" id="five" onclick="numbFive()" value="5"/>
             </td>
             <td>
-                <button class="nut" type="button" id="nine" onclick="numbNine()">9</button>
+                <input class="nut" type="button" id="six" onclick="numbSix()" value="6"/>
             </td>
             <td>
-                <button class="nut" type="button" id="muti" onclick="numbMuti()">X</button>
+                <input class="nut" type="button" id="subtract" onclick="Subtraction()" value="-"/>
             </td>
         </tr>
         <tr>
             <td>
-                <button class="nut" type="reset" id="reset" onclick="resetC()">C</button>
+                <input class="nut" type="button" id="seven" onclick="numbSeven()" value="7"/>
             </td>
             <td>
-                <button class="nut" type="button" id="zero" onclick="numbZero()">0</button>
+                <input class="nut" type="button" id="eight" onclick="numbEight()" value="8"/>
             </td>
             <td>
-                <button class="nut" type="button" id="equal" onclick="equalTo()">=</button>
+                <input class="nut" type="button" id="nine" onclick="numbNine()" value="9"/>
             </td>
             <td>
-                <button class="nut" type="button" id="division" onclick="divisionBy()">/</button>
+                <input class="nut" type="button" id="muti" onclick="Muti()" value="*"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="nut" type="button" value="C" onclick="reset()"/>
+            </td>
+            <td>
+                <input class="nut" type="button" id="zero" onclick="numbZero()" value="0"/>
+            </td>
+            <td>
+                <input class="nut" type="button" id="equal" onclick="equalTo()" value="="/>
+            </td>
+            <td>
+                <input class="nut" type="button" id="division" onclick="division()" value="/"/>
             </td>
         </tr>
     </table>
-    <script>
-
-    </script>
+    </form>
+    <script src="maytinh.js"></script>
 </body>
 </html>
