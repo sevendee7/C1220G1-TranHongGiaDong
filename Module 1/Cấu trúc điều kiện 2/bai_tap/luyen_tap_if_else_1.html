@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        alert("Bài 1");
+        let a = parseInt(prompt("Nhập a ="));
+        let b = parseInt(prompt("Nhập b ="));
+        if (a%b==0) {
+            alert(a + " chia hết cho " + b);
+        }   else {
+            alert(a + " không chia hết cho " + b);
+        }
+    </script>
+
+    <script>
+        alert("Bài 2");
+        let age = parseInt(prompt("Nhập tuổi:"))
+        if (age<15) {
+            alert("Bạn không đủ tuổi học lớp 10")
+        }
+    </script>
+
+    <script>
+        alert("Bài 3");
+        let number = parseInt(prompt("Nhập vào một số bất kỳ:"));
+        if (number>0) {
+            alert(number + " lớn hơn 0");
+        } else if (number==0) {
+            alert(number + " bằng 0");
+        } else {
+            alert(number + " bé hơn 0");
+        }
+    </script>
+
+    <script>
+        alert("Bài 4");
+        let so1 = parseInt(prompt("Nhập số thứ nhất ="));
+        let so2 = parseInt(prompt("Nhập số thứ hai ="));
+        let so3 = parseInt(prompt("Nhập số thứ ba ="));
+        let max;
+        if ((so1>so2) && (so1>so3)) {
+            max = so1;
+        } else if (so2>so3) {
+            max = so2;
+        } else {
+            max = so3;
+        }
+        alert(max + " là số lớn nhất");
+    </script>
+
+    <script>
+        alert("Bài 5");
+        let diemKiemTra = parseInt(prompt("Nhập điểm kiểm tra"));
+        let diemGiuaKy = parseInt(prompt("Nhập điểm giữa kỳ"));
+        let diemCuoiKy = parseInt(prompt("Nhập điểm cuối kỳ"));
+        let diemTrungBinh = ( diemKiemTra + diemGiuaKy * 2 + diemCuoiKy *3)/6;
+            if (diemTrungBinh>=8) {
+                alert("Học giỏi đấy");
+            }   else if (diemTrungBinh>=6.5) {
+                alert("Học khá được");
+            }   else if (diemTrungBinh>=5) {
+                alert("Học hơi kém");
+            }   else if (diemTrungBinh<5) {
+                alert("Nguy cơ ở lại lớp cao");
+            }
+    </script>
+
+    <script>
+        alert("Bài 6");
+        let revenue = parseInt(prompt("Nhập doanh số bán hàng (triệu đồng)"));
+        let commission;
+        if (revenue>100) {
+            commission = revenue * 10 / 100;
+        }   else if (revenue>=50) {
+            commission = revenue * 7 / 100;
+        }   else if (revenue>=25) {
+            commission = revenue * 5 / 100;
+        }   else {
+            commission = revenue * 3 / 100;
+        }
+        alert("Tiền hoa hồng của bạn là " +commission+ " triệu");
+    </script>
+
+    <script>
+        alert("Bài 7");
+        let hour = parseInt(prompt("Cuộc gọi của bạn kéo dài mấy giờ ?"))
+        let minute = parseInt(prompt("Cuộc gọi của bạn kéo dài mấy phút ?"))
+        let second = parseInt(prompt("Cuộc gọi của bạn kéo dài mấy giây ?"))
+        let donGia = 3000;
+        let soTien = 3000 * (60 * hour + minute + second / 60);
+        alert("Cước phí của bạn là " + soTien + " đồng")
+    </script>
+</body>
+</html>
