@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        alert("Bài 1");
+        let doC = parseInt(prompt("Nhập độ C ="));
+        let doF = (doC * 9 / 5) + 32;
+        alert(doC + " độ C = " + doF + " độ F");
+    </script>
+
+    <script>
+        alert("Bài 2");
+        let metter = parseInt(prompt("Nhập đơn vị m ="))
+        let feet = metter * 3.2808;
+        alert(metter + "m = " + feet + "feet");
+    </script>
+
+    <script>
+        alert("Bài 3");
+        let canhVuong = parseInt(prompt("Nhập cạnh hình vuông ="));
+        let dienTichVuong = canhVuong**2;
+        alert("Diện tích hình vuông= " + dienTichVuong);
+    </script>
+
+    <script>
+        alert("Bài 4");
+        let chieuDai = parseInt(prompt("Nhập chiều dài ="));
+        let chieuRong = parseInt(prompt("Nhập chiều rộng ="));
+        let dienTichChuNhat = chieuDai * chieuRong;
+        alert("Diện tích hình chữ nhật= " + dienTichChuNhat);
+    </script>
+
+    <script>
+        alert("Bài 5");
+        let canhTamGiac1 = parseInt(prompt("Nhập cạnh kề thứ nhất"));
+        let canhTamGiac2 = parseInt(prompt("Nhập cạnh kề thứ hai"));
+        let dienTichTamGiac = canhTamGiac1 * canhTamGiac2 / 2;
+        alert("Diện tích tam giác vuông = " + dienTichTamGiac);
+    </script>
+
+    <script>
+        alert("Bài 6");
+        let a1 = parseInt(prompt("Nhập a = (a khác 0)"));
+        let b1 = parseInt(prompt("Nhập b ="));
+        let x1 = -b1/a1;
+        alert("x =" + x1);
+    </script>
+
+    <script>
+        alert("Bài 7");
+        let a2= parseInt(prompt("Nhập a = (a khác 0)"));
+        let b2 = parseInt(prompt("Nhập b = "));
+        let c = parseInt(prompt("Nhập c ="));
+        let delta = b2**2 - 4*a2*c;
+        if (a2+b2+c==0) {
+            alert("Phương trình có 2 nghiệm x1 = 1 ; x2 = " + (c/a2));
+        }   else if (delta<0) {
+            alert("Phương trình vô nghiệm !");
+        }   else if (delta==0) {
+            alert("Phương trình có nghiệm kép x1 = x2 = " + (-b2/(2*a2)));
+        }   else if (delta>0) {
+            alert("Phương trình có 2 nghiệm phân biệt x1 = " + ((-b2+ Math.sqrt(delta))/(2*a2)) + " ; x2 = " + ((-b2- Math.sqrt(delta))/(2*a2)));
+        }
+    </script>
+
+    <script>
+        alert("Bài 8");
+        let checkAge = parseInt(prompt("Nhập vào số tuổi :"));
+        if ((0<checkAge) && (checkAge<120)) {
+            alert("True");
+        }   else {
+            alert("False");
+        }
+    </script>
+
+    <script>
+        alert("Bài 9");
+        let canh1 = parseInt(prompt("Nhập vào cạnh thứ 1 của tam giác ="));
+        let canh2 = parseInt(prompt("Nhập vào cạnh thứ 2 của tam giác ="));
+        let canh3 = parseInt(prompt("Nhập vào cạnh thứ 3 của tam giác ="));
+        let canh12 = canh1 + canh2;
+        let canh23 = canh2 + canh3;
+        let canh13 = canh1 + canh3;
+        let canh123 = canh1 + canh2 + canh3;
+        if ((canh12>canh3) && (canh23>canh1) && (canh13>canh2) && (canh123>0)) {
+            alert("Tam giác hợp lệ");
+        }   else {
+            alert("Tam giác không hợp lệ");
+        }
+    </script>
+
+    <script>
+        alert("Bài 10");
+        let soDienThangCu = parseInt(prompt("Nhập vào số điện tháng cũ"));
+        let soDienThangMoi = parseInt(prompt("Nhập vào số điện tháng này"));
+        let soDien = soDienThangMoi - soDienThangCu;
+        let tienDien;
+        if (soDien<20) {
+            tienDien=1000*soDien;
+            alert("Tiền điện tháng này là "+tienDien);
+        }   else {
+            tienDien=1000 * soDien + 1500 * (soDien-20);
+            alert("Tiền điện tháng này là "+tienDien);
+        }
+    </script>
+
+    <script>
+        alert("Bài 11");
+        let tienLuong = parseInt(prompt("Nhập vào tiền lương tháng này của bạn : ( triệu đồng )"));
+        let tienThue;
+        if (tienLuong<10000000) {
+            tienThue = tienLuong * 5 / 100;
+        }   else if ((tienLuong<50000000) && (tienLuong>=10000000)) {
+            tienThue = 500000 + (tienLuong - 10000000) * 10 / 100;
+        }   else if ((tienLuong>50000000) && (tienLuong<100000000)) {
+            tienThue = 500000 + 5000000 + (tienLuong - 50000000) * 15 / 100;
+        }   else {
+            tienThue = 500000 + 5000000  + (tienLuong-500000000) * 25 / 100;
+        }
+        alert("Thuế thu nhập cá nhân của bạn = " + tienThue);
+    </script>
+
+    <script>
+        alert("Bài 12");
+        let tienGuiNganHang = parseInt(prompt("Nhập vào số tiền bạn định gửi ="));
+        let soThang = parseInt(prompt("Nhập vào số tháng bạn định gửi tiền"));
+        let tienNhanDuoc;
+        if (soThang<6) {
+            tienNhanDuoc= tienGuiNganHang + tienGuiNganHang * 7 / 100;
+        }   else if (soThang<12) {
+            tienNhanDuoc= tienGuiNganHang + tienGuiNganHang * 10 / 100;
+        }   else if (sothang<36) {
+            tienNhanDuoc= tienGuiNganHang + tienGuiNganHang * 15 / 100;
+        }   else {
+            tienNhanDuoc= tienGuiNganHang + tienGuiNganHang * 20 / 100;
+        }
+        alert("Số tiền bạn nhận được sau khi gửi " +soThang+ " tháng = " +tienNhanDuoc);
+
+    </script>
+</body>
+</html>
