@@ -2,85 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quest1</title>
+    <title>Yêu cầu 1</title>
 </head>
 <body>
-    <form style="background-color: lightskyblue" action="bai2.html" method="get">
-        <table border="7px" width="50%" style="margin: auto; background-color: palegoldenrod">
-            <caption style="background-color: palegoldenrod;">BOOKING FORM</caption>
-            <tr>
-                <td align="right">Name</td>
-                <td ><input id="name" type="text" placeholder="Enter your Name"/></td>
-            </tr>
-            <tr>
-                <td align="right">ID</td>
-                <td ><input id="idnumber" type="text" placeholder="Enter your ID number"/></td>
-            </tr>
-            <tr>
-                <td align="right">Date of birth</td>
-                <td ><input id="dateofbirth" type="date" placeholder="dd/mm/yyyy"/></td>
-            </tr>
-            <tr>
-                <td align="right">Email</td>
-                <td ><input id="email" type="email" placeholder="Enter your email"/></td>
-            </tr>
-            <tr>
-                <td align="right">Address</td>
-                <td ><textarea id="address"></textarea></td>
-            </tr>
-            <tr>
-                <td align="right">Customer membership</td>
-                <td >
-                    <select id="customermember" name="dropdown">
-                        <option value = "15" >Diamond</option>
-                        <option value = "12" >Platinum</option>
-                        <option value = "10" >Gold</option>
-                        <option value = "8" >Silver</option>
-                        <option value = "5" >Member</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td align="right">Discount</td>
-                <td><input id="discount" type="text"/></td>
-            </tr>
-            <tr>
-                <td align="right">Pax</td>
-                <td><input id="pax" type="text" placeholder="Book for how many people"/></td>
-            </tr>
-            <tr>
-                <td align="right">Days for stay</td>
-                <td><input id="nights" type="text" placeholder="How many day you'll stay"/></td>
-            </tr>
-            <tr>
-                <td align="right">Type of service</td>
-                <td>
-                    <select id="service" name="dropdown">
-                        <option value = "500" >Villa (500$/day)</option>
-                        <option value = "300" >House (300$/day)</option>
-                        <option value = "100" >Room (100$/day)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td align="right">Type of room</td>
-                <td>
-                    <select id="typeofroom" name="dropdown">
-                        <option value = "Vip" >Vip</option>
-                        <option value = "Business" >Business</option>
-                        <option value = "Normal" >Normal</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="submit" name="submit" value="submit" onclick="submitform()">Next</button>
-                </td>
-            </tr>
-        </table>
-    </form>
-    <script src="bai1.js">
-    </script>
+    <script>
+        let name;
+        let cmnd;
+        let birthDay;
+        let email;
+        let address;
+        let typeService;
+        let typeRoom;
+        let typeCustomer;
+        let discount;
+        let quantityIncluded;
+        let rentDays;
+        let total;
 
+        name = prompt("Enter name: ");
+        cmnd = prompt("Enter id number: ");
+        birthDay = prompt("Enter date of birth: ");
+        email = prompt("Enter email: ");
+        address = prompt("Enter your address: ");
+        typeCustomer = prompt("Enter type of customer: ");
+        typeRoom = prompt("Enter type of room: ");
+        typeService = prompt("Enter type of service: ");
+        discount = prompt("Enter discount: ");
+        quantityIncluded = prompt("Enter quantity included: ");
+        rentDays = prompt("Enter rent days: ");
+        total = parseInt(typeRoom) * parseInt(rentDays) * (1-parseInt(discount)/100);
+
+        alert("Name: " +name+ "\n" +
+        "CMND: " +cmnd+ "\n" +
+        "Birthday: " +birthDay+ "\n" +
+        "Email: " +email+ "\n" +
+        "Address: " +address+ "\n" +
+        "Type of customer: " +typeCustomer+ "\n" +
+        "Type of room: " +typeRoom+ "\n" +
+        "Type of service: " +typeService+ "\n" +
+        "Discount: " +discount+ "\n" +
+        "Quantity included: " +quantityIncluded+ "\n" +
+        "Rent days: " +rentDays+ "\n" +
+        "Total pay: " +total+ "\n");
+    </script>
 </body>
 </html>
