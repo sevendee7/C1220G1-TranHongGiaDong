@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        alert("Bài 4");
+        let num1 = 0;
+        let num2 = 1;
+        let temp =0;
+        let soCanTim;
+        let i=1;
+        while (i<100)  {
+            temp = num2;
+            num2 = num2+num1;
+            num1 = temp;
+            if (num2 % 5 == 0) {
+                soCanTim = num2 ;
+                break;
+            }
+            i++;
+        }
+        alert(soCanTim);
+    <script>
+</body>
+</html>

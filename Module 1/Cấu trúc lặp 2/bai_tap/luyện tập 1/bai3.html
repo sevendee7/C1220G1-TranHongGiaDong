@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        alert("Bài 3")
+        let num1 = 0;
+        let num2 = 1;
+        let temp =0;
+        let  fibonaci = "0";
+        let count = 1;
+        while (count<20) {
+            temp = num2;
+            num2 = num2+num1;
+            num1 = temp;
+            fibonaci += " " + num1;
+            count++;
+        }
+        alert(fibonaci);
+    </script>
+</body>
+</html>

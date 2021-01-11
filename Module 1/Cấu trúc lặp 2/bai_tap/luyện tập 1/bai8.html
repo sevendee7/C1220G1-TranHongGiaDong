@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button type="button" onclick="play()">Play</button>
+    <script>
+        function play() {
+            let range1 = parseInt(prompt("Bạn muốn đoán bắt đầu từ: "));
+            let range2 = parseInt(prompt("Đến: "));
+            let count=1;
+            let dapAn  = (Math.floor(Math.random() * range2) + range1);
+            alert(dapAn);
+                while (count<4) {
+                    let doan = parseInt(prompt("Dự đoán lần thứ "+count+": "));
+                    if (doan===dapAn) {
+                        alert("Chính xác");
+                        break;
+                    }   else if (doan>dapAn) {
+                        alert("Thấp hơn");
+                        count++;
+                    }   else {
+                        alert("Cao hơn");
+                        count++;
+                    }
+                }
+        }
+    </script>
+</body>
+</html>

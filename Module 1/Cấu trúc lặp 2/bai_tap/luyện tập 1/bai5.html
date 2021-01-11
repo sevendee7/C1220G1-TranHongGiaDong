@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        alert("Bài 3")
+        let num1 = 0;
+        let num2 = 1;
+        let temp =0;
+        let  fibonaci = "0";
+        let count = 1;
+        let tong;
+        while (count<20) {
+            temp = num2;
+            num2 = num2+num1;
+            num1 = temp;
+            fibonaci += " + " + num1;
+            count++;
+        }
+        tong = eval(fibonaci);
+        alert("Tổng 20 số đầu tiên trong dãy fibonaci = "+tong);
+
+    </script>
+</body>
+</html>

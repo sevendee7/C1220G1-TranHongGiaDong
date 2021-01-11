@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        let i=1;
+        let chiaHetCho7 = "";
+        let count = 1;
+        let tong;
+                while (count<=30) {
+                    if (i % 7 == 0) {
+                        chiaHetCho7 += " + " + i  ;
+                        i++;
+                        count++;
+                    }   else {
+                        i++;
+                    }
+                }
+                alert(chiaHetCho7);
+                tong = eval(chiaHetCho7);
+                alert(tong);
+    </script>
+</body>
+</html>
