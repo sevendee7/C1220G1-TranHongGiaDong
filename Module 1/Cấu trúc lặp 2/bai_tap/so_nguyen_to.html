@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+    <script>
+        let numb = parseInt(prompt("Bạn muốn in ra bao nhiêu số nguyên tố ?"));
+        let count = 1;
+        let snt = "";
+        let m = 2;
+            while (count<=numb) {
+                let check = true;
+                    for (let i = 2; i < m; i++) {
+                        if (m % i === 0) {
+                            check = false;
+                            break;
+                        }
+                    }
+                    if (check) {
+                        snt += m + "  ";
+                        count++;
+                    }
+                    m++;
+            }
+            alert(numb + " số nguyên tố là : " + snt);
+    </script>
+</body>
+</html>
