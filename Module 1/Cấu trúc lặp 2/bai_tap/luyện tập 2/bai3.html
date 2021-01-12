@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--------------------------------Hình 1---------------------------->
+    <script>
+        let n=5;
+        let i;
+        let j;
+            for ( i=1; i<=n; i++) {
+                for ( j=1; j<=i; j++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+    </script>
+<!--------------------------------Hình 2----------------------------->
+    <script>
+        let n=1;
+        let i;
+        let j;
+        for ( i=5; i>=n; i--) {
+            for ( j=1; j<=i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+<!-------------------------------Hình 3------------------------------->
+    <script>
+        let n=5;
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= n - i; j++) {
+                document.write("&ensp;");
+            }
+            for (let k = n-i; k < n; k++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    </script>
+<!--------------------------------Hình 4--------------------------------->
+    <script>
+        let n=5;
+        for (let i = 1; i <= n; i++) {
+            for (let j = 0; j <= n - i; j++) {
+                document.write("*");
+            }
+            for (let k = n-i; k < n; k++) {
+                document.write("&ensp;");
+            }
+            document.write("<br>");
+        }
+    </script>
+<!----------------------------------Hình 5--------------------------------->
+    <script>
+        let dai = 18;
+        let rong = 5;
+        for (let i=1; i<=dai; i++) {
+            document.write("*");
+        }
+        document.write("<br>");
+        for (let i = 1; i < rong; i++) {
+            for (let j = 1; j <= dai; j++) {
+                if ((j === 1) || (j === 10)) {
+                    document.write("*");
+                } else {
+                    document.write("&emsp;")
+                }
+            }
+            document.write("<br>");
+        }
+        for (let i=1; i<=dai; i++) {
+            document.write("*");
+        }
+    </script>
+<!----------------------------------Bài 5--------------------------------->
+    <script>
+        let tienVay = parseInt(prompt("Nhập số tiền bạn cần vay: "));
+        let laiSuat = parseInt(prompt("Nhập lãi suất hàng tháng: "));
+        let thang = parseInt(prompt("Nhập số tháng cần vay: "));
+        let tienLai = 0;
+        let phaiTra =0;
+            for (let i=1; i<=thang; i++) {
+                tienLai = tienVay*laiSuat/100;
+                phaiTra = tienVay + tienLai;
+                tienVay += tienLai;
+            }
+            alert("Số tiền cần phải trả là: " + phaiTra);
+    </script>
+<!----------------------------------Bài 6--------------------------------->
+    <script>
+        for (let j=1; j<=6; j++) {
+            for (let i=1; i<=7; i++) {
+                if (((i === 1) && (j === 1)) || ((i === 4) && (j === 1)) || ((i === 7) && (j === 1))
+                    || ((i === 1) && (j === 4)) || ((i === 7) && (j === 4))
+                    || ((i === 1) && (j === 5)) || ((i === 2) && (j === 5)) || ((i === 6) && (j === 5)) || ((i === 7) && (j === 5))
+                    || ((i === 1) && (j === 6)) || ((i === 2) && (j === 6)) || ((i === 3) && (j === 6)) || ((i === 5) && (j === 6)) || ((i === 6) && (j === 6)) || ((i === 7) && (j === 6))) {
+                    document.write("&ensp;");
+                } else {
+                    document.write("*");
+                }
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
