@@ -8,10 +8,10 @@
     <button type="button" onclick="play()">Play</button>
     <script>
         function play() {
-            let range1 = parseInt(prompt("Bạn muốn đoán bắt đầu từ: "));
-            let range2 = parseInt(prompt("Đến: "));
+            let a = parseInt(prompt("Bạn muốn đoán bắt đầu từ: "));
+            let b = parseInt(prompt("Đến: "));
             let count=1;
-            let dapAn  = (Math.floor(Math.random() * range2) + range1);
+            let dapAn  = (Math.floor(Math.random() * (b-a) + a));
             alert(dapAn);
                 while (count<4) {
                     let doan = parseInt(prompt("Dự đoán lần thứ "+count+": "));
