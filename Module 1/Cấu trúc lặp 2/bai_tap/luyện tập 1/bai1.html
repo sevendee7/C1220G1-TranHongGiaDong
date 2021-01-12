@@ -7,16 +7,15 @@
 <body>
     <script>
         alert("Bài 1");
-        let count=0;
         let n=100;
         for (let i=1; i<=n; i++) {
-            if (i==99) {
+            if (i===99) {
                 alert("Đã hoàn thành");
-            } else {
-                count++;
+                continue;
             }
+                document.write(i);
+                document.write("<br>");
         }
-        alert(count);
     </script>
 </body>
 </html>
