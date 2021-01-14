@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Sử dụng hàm có sẵn</title>
 </head>
 <body>
-$END$
+<!----------------Bài 1------------------------->
+    <script>
+        let arrs = ["Black", "Green", "Blue"];
+        let str = arrs.toString();
+        let gop = arrs.join(" & ");
+        console.log(str);
+        console.log(arrs);
+        console.log(gop);
+    </script>
+
+<!----------------Bài 2------------------------->
+    <script>
+        let str = prompt("Nhập vào 1 dãy số: ");
+        let arrs = Array.from(str);
+        let long = arrs.length;
+            for (let i = 0; i <= long ; i++) {
+                    if ((arrs[i] % 2 === 0) && (arrs[i+1] % 2 === 0)) {
+                        arrs.splice(i+1, 0, "-");
+                    }
+            }
+            alert(arrs);
+    </script>
+
+<!----------------Bài 3------------------------->
+    <script>
+        let str = prompt("Nhập vào một chuỗi ký tự: ");
+        let arrs = Array.from(str);
+        let long = arrs.length;
+        let result = [];
+            for ( let i = 0; i < long; i++ ) {
+                if (arrs[i].charCodeAt() > 64 && arrs[i].charCodeAt() < 91) {
+                    result += arrs[i].toLowerCase();
+                }
+                if (arrs[i].charCodeAt() > 96 && arrs[i].charCodeAt() < 123) {
+                    result += arrs[i].toUpperCase();
+                }
+                if (arrs[i].charCodeAt() === 32) {
+                    result += " ";
+                }
+            }
+            alert(result);
+    </script>
 </body>
 </html>
