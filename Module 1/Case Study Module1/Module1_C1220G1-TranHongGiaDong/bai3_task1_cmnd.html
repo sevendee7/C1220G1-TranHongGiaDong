@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 3 - Task 1</title>
+</head>
+<body>
+    <script>
+        let check = false;
+        do {
+            let cmnd = (prompt("Nhập số cmnd: "));
+            let long = cmnd.length;
+            check = (!isNaN(cmnd) && (cmnd == parseInt(cmnd)) && (0 <= parseInt(cmnd)) && (long===8));
+        }   while (!check);
+        alert("CMND: " +cmnd)
+    </script>
+</body>
+</html>
