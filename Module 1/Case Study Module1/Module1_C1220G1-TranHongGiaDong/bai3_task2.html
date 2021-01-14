@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 3 - Task 2</title>
+</head>
+<body>
+    <script>
+        let customerName = prompt("Nhập tên khách hàng: ");
+        let address = prompt("Nhập địa chỉ khách hàng: ");
+        let customerType = prompt("Nhập loại khách hàng: ");
+        let arrName = Array.from(customerName.trim());
+        let arrAddress = Array.from(address.trim());
+        let arrType = Array.from(customerType.trim());
+
+
+            for (let i = 0; i < arrName.length; i++) {
+                if (arrName[i] === " " && arrName[i + 1] === " ") {
+                    arrName.splice(i, 1);
+                    i--;
+                }
+            }
+                for (let i = 0; i < arrName.length; i++) {
+                    arrName[0] = arrName[0].toUpperCase();
+                    if (arrName[i] === " ") {
+                        arrName[i+1] = arrName[i+1].toUpperCase();
+                            }
+                }
+                    for (let i = 0; i < arrName.length; i++) {
+                        if (i == 0 || arrName[i-1] === " ") {
+                            continue;
+                        }   else {
+                            arrName[i] = arrName[i].toLowerCase();
+                        }
+                    }
+
+
+            for (let i = 0; i < arrAddress.length; i++) {
+                if (arrAddress[i] === " " && arrAddress[i + 1] === " ") {
+                    arrAddress.splice(i, 1);
+                    i--;
+                }
+            }
+                for (let i = 0; i < arrAddress.length; i++) {
+                    arrAddress[0] = arrAddress[0].toUpperCase();
+                    if (arrAddress[i] === " ") {
+                        arrAddress[i+1] = arrAddress[i+1].toUpperCase();
+                    }
+                }
+                    for (let i = 0; i < arrAddress.length; i++) {
+                        if (i == 0 || arrAddress[i-1] === " ") {
+                            continue;
+                        }   else {
+                            arrAddress[i] = arrAddress[i].toLowerCase();
+                        }
+                    }
+
+
+            for (let i = 0; i < arrType.length; i++) {
+                if (arrType[i] === " " && arrType[i + 1] === " ") {
+                    arrType.splice(i, 1);
+                    i--;
+                }
+            }
+                for (let i = 0; i < arrType.length; i++) {
+                    arrType[0] = arrType[0].toUpperCase();
+                    if (arrType[i] === " ") {
+                        arrType[i+1] = arrType[i+1].toUpperCase();
+                    }
+                }
+                    for (let i = 0; i < arrType.length; i++) {
+                        if (i == 0 || arrType[i-1] === " ") {
+                            continue;
+                        }   else {
+                            arrType[i] = arrType[i].toLowerCase();
+                        }
+                    }
+
+            alert("Tên khách hàng: " + arrName + "\n" +
+                "Địa chỉ: " + arrAddress + "\n" +
+                "Loại khách hàng: " + arrType + "\n");
+    </script>
+</body>
+</html>
