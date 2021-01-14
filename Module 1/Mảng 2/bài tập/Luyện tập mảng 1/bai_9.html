@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+    <script>
+        let arrayA = new Array(10);
+        for (let i = 0; i < 10; i++) {
+            arrayA[i] = prompt("Nhập phần tử thứ " + (i + 1) + " của mảng a ");
+        }
+        let arrayB = new Array(10);
+        for (let i = 0; i < 10; i++) {
+            arrayB[i] = prompt("Nhập phần tử thứ " + (i + 1) + " của mảng b ");
+        }
+        let arrayC = arrayB.concat(arrayA);
+
+        alert("Mảng A: " + arrayA + "\n" +
+            "Mảng B: " + arrayB + "\n" +
+            "Mảng C: " + arrayC);
+
+    </script>
+</body>
+</html>

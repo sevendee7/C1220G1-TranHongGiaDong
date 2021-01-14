@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+    <script>
+        let array = new Array(10);
+        let v = parseInt(prompt("Nhập số nguyên V = "));
+            for (let i = 0; i < 10; i++) {
+                array[i] = prompt("Nhập phần tử thứ " + (i + 1) + " = ");
+            }
+        alert("Mảng trước khi xóa V ->  " + array + "\n" +
+                "V = " + v);
+
+            for (let i = 0; i < 10; i++) {
+                if (array[i] == v) {
+                    array.splice(i,1);
+                    array.push(0);
+                }
+            }
+        alert("Mảng sau khi xóa V ->  " +array);
+    </script>
+</body>
+</html>

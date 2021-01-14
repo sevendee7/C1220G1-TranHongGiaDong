@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+    <script>
+        let array = new Array(10);
+        let temp = "";
+            for (let i = 0; i < 10; i++) {
+                array[i] = prompt("Nhập phần tử thứ " + (i + 1) + " = ");
+            }
+            alert("Mảng trước khi sắp xếp: " + array);
+
+                for (let i = 0; i < 10; i++) {
+                    for (let j = 0; j < 10; j++) {
+                        if (parseInt(array[j]) < parseInt(array[j+1])) {
+                            temp = array[j+1];
+                            array[j+1] = array[j];
+                            array[j] = temp;
+                        }
+                    }
+                }
+            // array.sort(function (a,b) {
+            //     return a - b;
+            // })
+            alert("Mảng sau khi sắp xếp: " + array);
+    </script>
+</body>
+</html>

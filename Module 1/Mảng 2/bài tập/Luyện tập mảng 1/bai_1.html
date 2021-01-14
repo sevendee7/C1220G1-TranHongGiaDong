@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+    <script>
+        let array = new Array(10);
+        let result = "";
+            for (let i = 0; i < 10; i++) {
+                array[i] = parseInt(prompt("Nhập số thứ "+ (i+1)));
+                    if (array[i] >= 10) {
+                        result += array[i] + "  ";
+                    }
+            }
+        alert(" Các phần tử lớn hơn hoặc bằng 10 trong mảng là : " + result);
+    </script>
+</body>
+</html>

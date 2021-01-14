@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let array = new Array(10);
+        let max;
+        let sum = 0;
+        for (let i = 0; i < 10; i++) {
+            array[i] = parseInt(prompt("Nhập số thứ "+ (i+1)));
+        }
+
+        max = array[0];
+        sum = max;
+        for (let i = 1; i < 10; i++) {
+            sum += array[i];
+            if (array[i] > max) {
+                max = array[i];
+                indexMax = i+1;
+            }
+        }
+        alert(array + "\n"+
+            "Phần tử lớn nhất = " + max + "\n" +
+            "Giá trị trung bình các phần tử = " + (sum/10));
+    </script>
+</body>
+</html>
