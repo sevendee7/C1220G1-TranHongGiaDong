@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 3 - Task 1</title>
+</head>
+<body>
+    <script>
+    // <!--                  NHẬP EMAIL                      -->
+        let checkEmail;
+        let email;
+        do {
+            email = prompt(" Enter your email: ");
+            let arrayEmail = Array.from(email);
+            let long = arrayEmail.length;
+            let checkEmail1 = true;
+            let check2Email2 = true;
+            let check3Email3 = true;
+            let j;
+            let k;
+            let count=0;
+            checkEmail = true;
+                for (let i = 0; i < long; i++) {
+                    if ((arrayEmail[i] === "@") && i !== 0) {
+                        checkEmail1 = false;
+                        j = i + 4;
+                        break;
+                    }
+                }
+
+                    for (j; j < (long - 1); j++) {
+                        if (arrayEmail[j] === ".") {
+                            count++;
+                        }
+                        if (count === 1) {
+                            check2Email2 = false;
+                            k = j;
+                            break;
+                        }
+                    }
+
+                        if ((long - k) > 2) {
+                            check3Email3 = false;
+                        }
+
+                                if (checkEmail1 === false && check2Email2 === false && check3Email3 === false) {
+                                    checkEmail = false;
+                                } else {
+                                    alert("Bạn nhập không đúng ! Vui lòng nhập lại.  ")
+                                }
+        }   while (checkEmail);
+
+
+    // <!--                  NHẬP CMND                      -->
+        let check = false;
+        let cmnd="";
+        do {
+            cmnd = (prompt("Nhập số cmnd: "));
+            let long = cmnd.length;
+            check = (!isNaN(cmnd) && (cmnd == parseInt(cmnd)) && (0 <= parseInt(cmnd)) && (long===8));
+            if (!check) {
+                alert("Bạn nhập không đúng ! Vui lòng nhập lại. ")
+            }
+        }   while (!check);
+
+
+    // <!--                  NHẬP NGÀY SINH                      -->
+        let checkDateOfBirth;
+        let dateOfBirth;
+        do {
+            dateOfBirth = prompt("Enter you date of birth: (DD/MM/YYYY)");
+            let arrayDay = Array.from(dateOfBirth);
+            let long = arrayDay.length;
+            let checkDate;
+            let checkMonth;
+            let checkYear;
+            checkDateOfBirth=true;
+            let date = arrayDay[0] + arrayDay[1];
+            let month = arrayDay[3] + arrayDay[4];
+            let year = arrayDay[6] + arrayDay[7] + arrayDay[8] + arrayDay[9];
+
+            if (long === 10) {
+                checkDateOfBirth = true;
+            }
+
+            if (parseInt(date)>0 && (parseInt(date)<32)) {
+                checkDate = true;
+            }
+
+            if (parseInt(month)>0 && (parseInt(month)<13)) {
+                checkMonth = true;
+            }
+
+            if (parseInt(year)>1900 && (parseInt(year)<2021)) {
+                checkYear = true;
+            }
+
+            if (checkDateOfBirth && checkDate && checkMonth && checkYear) {
+                checkDateOfBirth = false;
+            }   else {
+                alert("Bạn nhập không đúng ! Vui lòng nhập lại.")
+            }
+        }   while (checkDateOfBirth);
+
+
+    // <!--                  NHẬP NGÀY THUÊ & NGƯỜI ĐI KÈM                      -->
+        let checkRent;
+        let checkQuantity;
+        let rentDays;
+        let quantity;
+        let checkAll;
+        do {
+            checkAll = true;
+            rentDays = prompt("Nhập số ngày thuê: ");
+            quantity = prompt("Nhập số người đi kèm: ");
+            checkRent = (!isNaN(rentDays) && (rentDays == parseInt(rentDays)) && (0 <= parseInt(rentDays)));
+            checkQuantity = (!isNaN(quantity) && (quantity == parseInt(quantity)) && (0 <= parseInt(quantity)));
+            if (checkRent && checkQuantity) {
+                checkAll = false;
+            }   else if (!checkRent) {
+                alert("Vui lòng nhập lại số ngày thuê hợp lệ !")
+            }   else {
+                alert("Vui lòng nhập số người đi kèm hợp lệ !")
+            }
+        }   while (checkAll);
+            alert("Email: " + email + "\n" +
+                "CMND: " + cmnd + "\n" +
+                "Ngày sinh: " + dateOfBirth + "\n" +
+                "Số ngày thuê: " + rentDays + "\n" + "Số người đi kèm: " + quantity);
+
+    </script>
+</body>
+</html>
