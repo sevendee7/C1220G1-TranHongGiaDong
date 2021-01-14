@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Từ điển</title>
 </head>
 <body>
-$END$
+    <script>
+        let viet = ["chào", "cảm ơn", "xin lỗi"];
+        let anh = ["hello", "thank you", "sorry"];
+        let long = viet.length;
+        let check;
+
+            do {
+                let input = prompt("Nhập từ bạn muốn dịch: ");
+                    for (let i = 0; i < long; i++) {
+                        check=true;
+                        if (input === viet[i]) {
+                            alert(input + " nghĩa là: " + anh[i]);
+                            check=false;
+                            break;
+                        }
+                    }
+                if (check) {
+                    alert("Không tìm thấy !")
+                }
+            }   while (check);
+    </script>
 </body>
 </html>

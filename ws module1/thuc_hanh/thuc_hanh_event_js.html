@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title></title>
 </head>
 <body>
-$END$
+    <input type="text" id="nhap1" placeholder="enter something"/>
+    <button type = "button" onclick="changeonclick()">Click me for change</button>
+    <p id="show"></p>
+    <script>
+        function changeonclick() {
+                let a = document.getElementById("nhap1").value;
+                document.getElementById("show").innerText=a;
+        }
+    </script>
+
+<br><br>
+
+    <input type = "text" id = "nhap2" placeholder="I'll repeat your typing below" oninput="changoninput()"/>
+    <p id="show2"></p>
+    <script>
+        function changoninput() {
+            let b = document.getElementById("nhap2").value;
+            document.getElementById("show2").innerText=b;
+        }
+    </script>
+
+<br><br>
+
+    <input type = "text" id = "nhap3" placeholder="enter after typing" onchange="changed()"/>
+    <p id="show3"></p>
+    <script>
+        function changed() {
+            let c = document.getElementById("nhap3").value;
+            document.getElementById("show3").innerText=c;
+        }
+    </script>
 </body>
 </html>

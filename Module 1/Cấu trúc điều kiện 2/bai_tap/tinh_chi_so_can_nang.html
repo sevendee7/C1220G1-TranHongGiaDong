@@ -22,7 +22,7 @@
         function run() {
             let chieuCao = parseFloat(document.getElementById("height").value);
             let canNang = parseInt(document.getElementById("weight").value);
-            let number = canNang/(chieuCao*chieuCao);
+            let number = canNang/chieuCao**2;
             if (number>=30) {
                 document.getElementById("result").innerText = " You are Obese";
             } else if ((number>=25) && (number<30)) {

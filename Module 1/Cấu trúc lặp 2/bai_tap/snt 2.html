@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title></title>
 </head>
 <body>
-$END$
+<script>
+    function checkPrimeNumber(x) {
+        let i;
+        for(i=2;i<x;i++){
+            if(x%i===0) {
+                return false;
+            }   else {
+                return true;
+            }
+        }
+    }
+    let count=0;
+    let numbers=parseInt(prompt("Nhap so n:"))
+    let result="";
+    let n=3;
+    while (count<numbers){
+        if(checkPrimeNumber(n)){
+            result=result+n+'<br>';
+            count++;
+        }
+            n++;
+
+    }
+    document.write(result);
+    // document.write(checkPrimeNumber(5));
+</script>
 </body>
 </html>

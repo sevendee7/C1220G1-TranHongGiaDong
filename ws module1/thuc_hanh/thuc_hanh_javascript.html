@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title></title>
 </head>
 <body>
-$END$
+    <h1 text-align="center">Thực hành javascript</h1>
+    <form>
+    <input type = "text" id = "number1" placeholder="Nhập số thứ nhất">
+    <input type = "text" id = "number2" placeholder="Nhập số thứ hai">
+    <p id="show"></p>
+    <button type = "button" onclick="run()">Kết quả!</button>
+    <input type="reset" value="Nhập lại">
+    <br>
+    <script>
+        function run(){
+        let a = document.getElementById("number1").value;
+        let b = document.getElementById("number2").value;
+        let c = parseInt(a) + parseInt(b);
+        document.getElementById("show").innerHTML = (a+" + "+b+" = "+c);
+        }
+    </script>
+    </form>
 </body>
 </html>
