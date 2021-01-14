@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập độ dài của mảng: "));
+        let array = [n];
+        let count = 0;
+            for (let i = 0; i < n; i++) {
+                array[i] = prompt("Nhập ký tự thứ " + (i+1) + " cho mảng");
+                }
+
+            for (let i = 0; i < n; i++) {
+                if (!isNaN(parseInt(array[i]))) {
+                    count++;
+                }
+            }
+            alert("Mảng : " + array + "\n" + "Có " + count + " số.");
+
+    </script>
+</body>
+</html>

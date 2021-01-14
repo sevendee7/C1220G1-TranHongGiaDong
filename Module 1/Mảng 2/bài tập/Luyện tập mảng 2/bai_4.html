@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Nhập vào một chuỗi: ");
+        let array = Array.from(str);
+        let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i].charCodeAt() == 32) {
+                    count++;
+                }
+            }
+            alert("Chuỗi " + str + " có " + (count+1) + " từ")
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập độ dài của mảng"));
+        let array = [];
+            for (let i = 0; i < n; i++) {
+                array[i] = prompt("Nhập vào ký tự thứ " + (i+1) + " của mảng")
+            }
+            alert("Mảng trước khi thay đổi -> " + array);
+
+            for (let i = 0; i < n; i++) {
+                if (array[i] === "-") {
+                    array.splice(i,1,"_");
+                }
+            }
+            alert("Mảng sau khi thay đổi -> " + array);
+    </script>
+</body>
+</html>
