@@ -29,17 +29,17 @@
             }
             for (let i = 0; i < array.length; i++) {
                 if (i === 0 || array[i - 1] === " ") {
-                    continue;
-                } else {
+                }   else {
                     array[i] = array[i].toLowerCase();
                 }
             }
-
         }
-
             chuanHoa(arrName);
             chuanHoa(arrAddress);
             chuanHoa(arrType);
+            arrName = arrName.join("");
+            arrAddress = arrAddress.join("");
+            arrType = arrType.join("");
             alert("Tên khách hàng: " + arrName + "\n" +
                 "Địa chỉ: " + arrAddress + "\n" +
                 "Loại khách hàng: " + arrType + "\n");
