@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Chuyển đổi giữa feet & metters</title>
 </head>
 <body>
-$END$
+        <h3>Feet & Metters Converter</h3>
+        <p>Type the value in the Feet field to convert the value to Metters:</p>
+        <label for="feet">Feet </label>
+            <input type="text" id="feet" placeholder="Feet"
+        oninput = "convertFeetToMetters(this.value)"
+        onchange = "convertFeetToMetters(this.value)"/>
+            <br><br>
+            <p>Metters: <span id="outputMetters"></span></p>
+
+            <br><br>
+
+
+        <p>Type the value in the Metters field to convert the value to Feet:</p>
+        <label for="metter">Metters </label>
+        <input type="text" id="metter" placeholder="Metters"
+               oninput = "convertMettersToFeet(this.value)"
+               onchange = "convertMettersToFeet(this.value)"/>
+        <br><br>
+        <p>Feet: <span id="outputFeet"></span></p>
+
+
+        <script>
+            function    convertFeetToMetters(feet) {
+                document.getElementById("outputMetters").innerHTML = feet * 0.305;
+            }
+
+            function    convertMettersToFeet(metters) {
+                document.getElementById("outputFeet").innerHTML = 3.279 * metters;
+            }
+        </script>
+
 </body>
 </html>
