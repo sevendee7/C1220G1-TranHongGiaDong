@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 5</title>
+</head>
+<body>
+    <script>
+        let arrayName = ["Anna Bell", "Daniel Power", "Bobby Dylan", "Christian Wu", "Adam Levine", "Tim Howard", "Jessica"];
+        let choose = prompt("1. Add Name Customer." + "\n" +
+            "2. Display Information Customer." + "\n" +
+            "3. Edit Information Customer." + "\n" +
+            "4. Delete Customer." + "\n" +
+            "5. Exit.");
+        switch (choose) {
+            case "1":
+                addName();
+                break;
+
+            case "2":
+                displayName(arrayName);
+                break;
+
+            case "3":
+                editName();
+                break;
+
+            case "4":
+                deleteName();
+                break;
+
+            case "5":
+                alert("Good bye!");
+        }
+
+        function addName() {
+            let soLuong = parseInt(prompt("How many names you want to add to this list: " +
+                "\n" +arrayName));
+            let arrayAdd = [];
+            for (let i = 0; i < soLuong; i++) {
+                arrayAdd[i] = prompt("Enter the " + (i + 1) + " name: ");
+            }
+            arrayName = arrayName.concat(arrayAdd);
+            arrayName.sort();
+            document.write("The list after add :" + "<br>");
+            for (let i = 0; i < arrayName.length; i++) {
+                document.write(arrayName[i] + "<br>");
+            }
+        }
+
+        function displayName(array) {
+            document.write("Here is the current list:");
+            array.sort();
+            for (let i = 0; i < array.length; i++) {
+                document.write(array[i] + "<br>");
+            }
+        }
+
+        function editName() {
+            let checkEdit = true;
+            do {
+                let edit = prompt("Enter the name you want to edit in this list: " + "\n" + arrayName);
+                let change = prompt("You want to change " + edit + " to: ");
+                for (let i = 0; i < arrayName.length; i++) {
+                    if (arrayName[i] == edit) {
+                        arrayName[i] = change;
+                        break;
+                    }
+                }
+                checkEdit = confirm("Would you like to continue adding ?");
+            }   while (checkEdit);
+            arrayName.sort();
+            document.write("The list after edit :" + "<br>");
+            for (let i = 0; i < arrayName.length; i++) {
+                document.write(arrayName[i] + "<br>");
+            }
+        }
+
+        function deleteName() {
+            let checkDelete = true;
+            do {
+            let deleteName = prompt("Enter the name you want to delete from the list:" + "\n" + arrayName);
+            for (let i = 0; i < arrayName.length; i++) {
+                if (arrayName[i] == deleteName) {
+                    arrayName.splice(i, 1);
+                }
+            }
+                checkDelete = confirm("Would you like to continue deleting ?");
+            }   while (checkDelete);
+            arrayName.sort();
+            document.write("The list after delete :" + "<br>");
+            for (let i = 0; i < arrayName.length; i++) {
+                document.write(arrayName[i] + "<br>");
+            }
+        }
+    </script>
+</body>
+</html>
