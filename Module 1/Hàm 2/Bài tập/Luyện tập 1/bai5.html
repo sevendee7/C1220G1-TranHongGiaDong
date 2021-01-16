@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input style="width:250px" type="text" id="input" placeholder="Nhập vào tên ngôi sao cần tìm kiếm"/>
+    <button type="button" onclick="timKiemSao()">Tìm kiếm</button>
+    <br>
+    <p id="hienThi"></p>
+
+    <script>
+        let arrayStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe" , "Regulus"];
+        let arrayGalaxy = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        // let str = document.getElementById("input").value;
+        function timKiemSao() {
+            let index = 8;
+            let string = document.getElementById("input").value;
+            for (let i = 0; i < 7; i++) {
+                if (string == arrayStar[i]) {
+                    index = i;
+                }
+            }
+                if (index == 8) {
+                    document.getElementById("hienThi").innerText = "Ngôi sao bạn tìm kiếm không có dữ liệu";
+                }   else {
+                    document.getElementById("hienThi").innerText =("Ngôi sao " + string + " thuộc chòm sao " + arrayGalaxy[index]);
+                }
+        }
+    </script>
+</body>
+</html>
