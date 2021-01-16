@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+    <script>
+        let str = prompt("Nhập vào một mảng: ");
+        let array1 = Array.from(str);
+        function daoNguocMang(array) {
+            let long = array.length;
+            for (let i = 0; i < long/2; i++) {
+                let temp = array[long-i];
+                array[long-i] = array[i];
+                array[i] = temp;
+            }
+            array = array.join("");
+            return array;
+        }
+        alert(daoNguocMang(array1));
+    </script>
+</body>
+</html>

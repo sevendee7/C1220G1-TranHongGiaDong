@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+    <script>
+        let char = prompt("Nhập vào một ký tự bất kì: ");
+        let array = ["a","b","a","b","b","1","2","3","1","1"];
+
+        function timKyTuTrongMang(character) {
+            let count = 0;
+            let check = true;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === character) {
+                    count++;
+                    check = false;
+                }
+            }
+            if (check) {
+                count = -1;
+                return count;
+            }   else {
+                return alert("Ký tự " + character + " xuất hiện " + count + " lần");
+            }
+        }
+
+        alert(timKyTuTrongMang(char));
+    </script>
+</body>
+</html>

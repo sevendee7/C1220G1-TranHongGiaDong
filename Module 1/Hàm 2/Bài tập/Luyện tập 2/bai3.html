@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        let numb = parseInt(prompt("Nhập vào một số = "));
+        alert(numb + " giai thừa = " + tinhGiaiThua(numb));
+
+        function tinhGiaiThua(number) {
+            let giaiThua = 1;
+            for (let i = 1; i <= number; i++) {
+                giaiThua *= i;
+            }
+            return giaiThua;
+        }
+    </script>
+</body>
+</html>

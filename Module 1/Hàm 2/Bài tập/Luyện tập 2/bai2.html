@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        let r = parseInt(prompt("Nhập vào bán kính hình tròn: "));
+        let pi = 3.14;
+
+        function tinhDienTichHinhTron(r) {
+            let square = r * r * pi;
+            return square;
+        }
+
+        function tinhChuViHinhTron(r) {
+            let perimeter = 2 * pi * r;
+            return perimeter;
+        }
+
+        alert("Hình tròn có bán kính = " + r + "\n" +
+        "Có chu vi = " + tinhChuViHinhTron(r) + "\n" +
+        "Có diện tích = " + tinhDienTichHinhTron(r) + "\n");
+    </script>
+</body>
+</html>

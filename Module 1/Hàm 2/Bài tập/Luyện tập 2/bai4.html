@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+    <script>
+        let numb = prompt("Nhập vào số bạn cần kiểm tra: ");
+        function kiemTra(number) {
+            if (number == parseInt(number) && number > 0) {
+                return true;
+            }   else {
+                return false;
+            }
+        }
+
+        if (kiemTra(numb)) {
+            alert(numb + " là số nguyên dương");
+        }   else {
+            alert(numb + " không phải là số nguyên dương");
+        }
+    </script>
+</body>
+</html>
