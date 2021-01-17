@@ -11,53 +11,45 @@
         let email;
         do {
             email = prompt(" Enter your email: ");
-            let arrayEmail = Array.from(email);
-            let long = arrayEmail.length;
-            let checkEmail1 = true;
-            let check2Email2 = true;
-            let check3Email3 = true;
-            let j;
-            let k;
-            let count=0;
+            let long = email.length;
+            let k = 0;
+            let j = 0;
+            let countA = 0;
+            let countDot = 0;
             checkEmail = true;
-                for (let i = 0; i < long; i++) {
-                    if ((arrayEmail[i] === "@") && i !== 0) {
-                        checkEmail1 = false;
-                        j = i + 1;
-                        break;
-                    }
-                }
 
-                    for (j; j < (long - 1); j++) {
-                        if (arrayEmail[j] === ".") {
-                            count++;
-                        }
-                        if (count === 1) {
-                            check2Email2 = false;
+                    for (let i = 0; i < long; i++) {
+                        if (email.charAt(i) === "@") {
+                            countA++;
+                            j = i + 1;
                             k = j;
-                            break;
                         }
                     }
 
-                        if ((long - k) > 1) {
-                            check3Email3 = false;
+                    for (j; j <= long; j++) {
+                        if (email.charAt(j) === ".") {
+                            countDot++;
                         }
+                    }
 
-                                if (!checkEmail1 && !check2Email2 && !check3Email3) {
-                                    checkEmail = false;
-                                } else {
-                                    alert("Bạn nhập không đúng ! Vui lòng nhập lại.  ")
-                                }
+            if (email.charAt(0) === "@" || email.charAt(k) === "." || countA !== 1 && countDot !== 1) {
+                alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
+                checkEmail = true;
+                break;
+            }   else if (countA == 1 && countDot == 1) {
+                checkEmail = false;
+                break;
+            }
         }   while (checkEmail);
 
 
     // <!--                  NHẬP CMND                      -->
         let check = false;
-        let cmnd="";
+        let cmnd = "";
         do {
-            cmnd = (prompt("Nhập số cmnd: "));
+            cmnd = prompt("Nhập số cmnd: ");
             let long = cmnd.length;
-            check = (!isNaN(cmnd) && (cmnd == parseInt(cmnd)) && (0 <= parseInt(cmnd)) && (long===8));
+            check = (!isNaN(cmnd) && (Number.isInteger(parseFloat(cmnd))) && (0 <= parseInt(cmnd)) && (long===8));
             if (!check) {
                 alert("Bạn nhập không đúng ! Vui lòng nhập lại. ")
             }
@@ -69,84 +61,88 @@
         let dateOfBirth;
         do {
             dateOfBirth = prompt("Enter you date of birth: (DD/MM/YYYY)");
-            let arrayDay = Array.from(dateOfBirth);
-            let long = arrayDay.length;
+            let long = dateOfBirth.length;
             let checkDate;
             let checkMonth;
             let checkYear;
-            checkDateOfBirth=true;
-            let date = arrayDay[0] + arrayDay[1];
-            let month = arrayDay[3] + arrayDay[4];
-            let year = arrayDay[6] + arrayDay[7] + arrayDay[8] + arrayDay[9];
+            let date = dateOfBirth.substring(0,2);
+            let month = dateOfBirth.substring(3,5);
+            let year = dateOfBirth.substring(6,10);
 
-            if (long === 10) {
-                checkDateOfBirth = true;
-            }
+            checkDateOfBirth = true;
 
-            if (parseInt(month)>0 && (parseInt(month)<13)) {
-                checkMonth = true;
-                switch (parseInt(month)) {
-                    case 1:
-                    case 3:
-                    case 5:
-                    case 7:
-                    case 8:
-                    case 10:
-                    case 12:
-                        if (date > 0 && date < 32) {
-                            checkDate = true;
-                        }   else {
-                            checkDate = false;
-                        }
-                        break;
-                    case 2:
 
-                        let isLeapYear = false;
-                        let isDivisibleBy4 = parseInt(year) % 4 === 0;
-                        if (isDivisibleBy4) {
-                            let isDivisibleBy100 = parseInt(year) % 100 === 0;
-                            if (isDivisibleBy100) {
-                                let isDivisibleBy400 = parseInt(year) % 400 === 0;
-                                if (isDivisibleBy400) {
+            if (dateOfBirth.charAt(2) === "/" && dateOfBirth.charAt(5) === "/") {
+                if (long === 10) {
+                    checkDateOfBirth = true;
+                }
+
+                if (parseInt(month) > 0 && (parseInt(month) < 13)) {
+                    checkMonth = true;
+                    switch (parseInt(month)) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 8:
+                        case 10:
+                        case 12:
+                            if (date > 0 && date < 32) {
+                                checkDate = true;
+                            } else {
+                                checkDate = false;
+                            }
+                            break;
+                        case 2:
+
+                            let isLeapYear = false;
+                            let isDivisibleBy4 = parseInt(year) % 4 === 0;
+                            if (isDivisibleBy4) {
+                                let isDivisibleBy100 = parseInt(year) % 100 === 0;
+                                if (isDivisibleBy100) {
+                                    let isDivisibleBy400 = parseInt(year) % 400 === 0;
+                                    if (isDivisibleBy400) {
+                                        isLeapYear = true;
+                                    }
+                                } else {
                                     isLeapYear = true;
                                 }
-                            }   else {
-                                isLeapYear = true;
                             }
-                        }
 
-                        if (isLeapYear) {
-                            if (date > 0 && date < 30) {
+                            if (isLeapYear) {
+                                if (date > 0 && date < 30) {
+                                    checkDate = true;
+                                } else {
+                                    checkDate = false;
+                                }
+                            } else {
+                                if (date > 0 && date < 29) {
+                                    checkDate = true;
+                                } else {
+                                    checkDate = false;
+                                }
+                            }
+                            break;
+
+                        default:
+                            if (date > 0 && date < 31) {
                                 checkDate = true;
-                            }   else {
+                            } else {
                                 checkDate = false;
                             }
-                        }   else {
-                            if (date > 0 && date < 29) {
-                                checkDate = true;
-                            }   else {
-                                checkDate = false;
-                            }
-                        }
-                        break;
-                    default:
-                        if (date > 0 && date < 31) {
-                            checkDate = true;
-                        }   else {
-                            checkDate = false;
-                        }
+                    }
+                }
+
+                if (parseInt(year) > 1900 && (parseInt(year) < 2021)) {
+                    checkYear = true;
                 }
             }
+                if (checkDateOfBirth && checkDate && checkMonth && checkYear) {
+                    checkDateOfBirth = false;
+                }   else {
+                    alert("Bạn nhập ngày sinh không đúng ! Vui lòng nhập lại.")
+                }
 
-            if (parseInt(year)>1900 && (parseInt(year)<2021)) {
-                checkYear = true;
-            }
-
-            if (checkDateOfBirth && checkDate && checkMonth && checkYear) {
-                checkDateOfBirth = false;
-            }   else {
-                alert("Bạn nhập không đúng ! Vui lòng nhập lại.")
-            }
         }   while (checkDateOfBirth);
 
 
@@ -155,26 +151,29 @@
         let checkQuantity;
         let rentDays;
         let quantity;
-        let checkAll;
         do {
-            checkAll = true;
             rentDays = prompt("Nhập số ngày thuê: ");
+            checkRent = (!isNaN(rentDays) && (rentDays == parseInt(rentDays)) && (0 < parseInt(rentDays)));
+
+                if (!checkRent) {
+                    alert("Vui lòng nhập lại số ngày thuê hợp lệ !")
+                }
+
+        }   while (!checkRent);
+
+        do {
             quantity = prompt("Nhập số người đi kèm: ");
-            checkRent = (!isNaN(rentDays) && (rentDays == parseInt(rentDays)) && (0 <= parseInt(rentDays)));
-            checkQuantity = (!isNaN(quantity) && (quantity == parseInt(quantity)) && (0 <= parseInt(quantity)));
-            if (checkRent && checkQuantity) {
-                checkAll = false;
-            }   else if (!checkRent) {
-                alert("Vui lòng nhập lại số ngày thuê hợp lệ !")
-            }   else {
+            checkQuantity = (!isNaN(quantity) && (quantity == parseInt(quantity)) && (0 < parseInt(quantity)));
+
+            if (!checkQuantity) {
                 alert("Vui lòng nhập số người đi kèm hợp lệ !")
             }
-        }   while (checkAll);
+        }   while (!checkQuantity);
+
             alert("Email: " + email + "\n" +
                 "CMND: " + cmnd + "\n" +
                 "Ngày sinh: " + dateOfBirth + "\n" +
                 "Số ngày thuê: " + rentDays + "\n" + "Số người đi kèm: " + quantity);
-
     </script>
 </body>
 </html>
