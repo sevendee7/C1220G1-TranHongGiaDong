@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Quản lí sản phẩm</title>
 </head>
 <body>
-$END$
+    <p id="result"></p>
+    <script>
+        let arr = ["BMW", "Toyota", "Mini Cooper", "Huyndai"];
+        let data ="";
+        let board = document.getElementById("result");
+
+        function hienThi() {
+            data = "<table border=1>";
+                data += "<tr>";
+                    data += "<td align='center' style='height:50px' colspan='4'>"
+                         +"<b>"+ "QUẢN LÍ SẢN PHẨM" + "</b>" + "</td>";
+                data += "</tr>";
+
+                data += "<tr>";
+                     data += "<td colspan='3'>"+
+                             "<input style='width:525px' type='text' id='new' placeholder='Nhập tên sản phẩm cần thêm'/>"+
+                             "</td>";
+                     data += "<td align='center' style='width:150px;height:25px ' >" +
+                             "<button onclick='themSanPham();' type='button'>" + "Thêm sản phẩm" + "</button>" +
+                             "</td>";
+                data += "</tr>";
+
+                // data += "<tr>";
+                // data += "<td colspan='3'>"+
+                //     "<input style='width:525px' type='text' id='new' placeholder='Nhập tên sản phẩm cần tìm kiếm'/>"+
+                //     "</td>";
+                // data += "<td align='center' style='width:150px;height:25px ' >" +
+                //     "<button onclick='timKiem();' type='button'>" + "Tìm kiếm" + "</button>" +
+                //     "</td>";
+                // data += "</tr>";
+
+                data += "<tr>";
+                    data += "<td align='center' style='width:75px;height:25px ' >" + "Số thứ tự" + "</td>";
+                    data += "<td align='center' style='width:300px;height:25px' >" + "Tên sản phẩm" + "</td>";
+                    data += "<td align='center' style='width:150px;height:25px' >" + "Xóa sản phẩm" + "</td>";
+                    data += "<td align='center' style='width:150px;height:25px' >" + "Chỉnh sửa sản phẩm" + "</td>";
+                data += "</tr>";
+
+                    for (let i = 0; i < arr.length; i++) {
+                        data += "<tr>";
+                            data += "<td align='center' style='width:75px;height:25px' >" + (i + 1) + "</td>";
+                            data += "<td align='center' style='width:300px;height:25px' >" + arr[i] + "</td>";
+                            data += "<td align='center' style='width:150px;height:25px ' >" +
+                                    "<button onclick='xoaSanPham(" + i + ");' type='button'>" + "Xóa" + "</button>" +
+                                    "</td>";
+                            data += "<td align='center' style='width:150px;height:25px ' >" +
+                                    "<button onclick='chinhSua(" + i + ");' type='button'>" + "Chỉnh sửa" + "</button>" +
+                                    "</td>";
+                        data += "<tr>";
+                    }
+            data += "</table>";
+            board.innerHTML = data;
+        }
+        hienThi();
+
+        function xoaSanPham(index) {
+            let xoa = confirm("Bạn muốn xóa " + arr[index] + " ?");
+            if (xoa) {
+                arr.splice(index, 1);
+            }
+            hienThi();
+        }
+
+        function chinhSua(index) {
+            let thayDoi = prompt("Bạn muốn chỉnh sửa " + arr[index] + " thành: ");
+            arr[index] = thayDoi;
+            hienThi();
+        }
+
+        function themSanPham() {
+            let themSP = document.getElementById("new").value;
+            arr.push(themSP);
+            hienThi();
+        }
+
+        // function timKiem(array) {
+        //
+        // }
+    </script>
 </body>
 </html>
