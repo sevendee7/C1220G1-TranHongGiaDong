@@ -6,53 +6,66 @@
 </head>
 <body>
     <script>
-        let arrayName = ["Anna Bell", "Daniel Power", "Bobby Dylan", "Christian Wu", "Adam Levine", "Tim Howard", "Jessica"];
-        let choose = prompt("1. Add Name Customer." + "\n" +
-            "2. Display Information Customer." + "\n" +
-            "3. Edit Information Customer." + "\n" +
-            "4. Delete Customer." + "\n" +
-            "5. Exit.");
-        switch (choose) {
-            case "1":
-                addName();
-                break;
 
-            case "2":
-                displayName(arrayName);
-                break;
+        let arrayName = ["Kuroky", "Miracle", "Dendi", "Puppy", "Anna", "Jerax", "Topson"];
 
-            case "3":
-                editName();
-                break;
+            let choose = parseInt(prompt("1. Add Name Customer." + "\n" +
+                "2. Display Information Customer." + "\n" +
+                "3. Edit Information Customer." + "\n" +
+                "4. Delete Customer." + "\n" +
+                "5. Exit."));
+            switch (choose) {
+                case 1:
+                    addName();
+                    break;
 
-            case "4":
-                deleteName();
-                break;
+                case 2:
+                    displayName(arrayName);
+                    break;
 
-            case "5":
-                alert("Good bye!");
-        }
+                case 3:
+                    editName();
+                    break;
+
+                case 4:
+                    deleteName();
+                    break;
+
+                case 5:
+                    alert("Good bye!");
+                    break;
+            }
+
 
         function addName() {
-            let soLuong = parseInt(prompt("How many names you want to add to this list: " +
-                "\n" +arrayName));
+            let check = false;
+            let newName = "";
             let arrayAdd = [];
-            for (let i = 0; i < soLuong; i++) {
-                arrayAdd[i] = prompt("Enter the " + (i + 1) + " name: ");
-            }
-            arrayName = arrayName.concat(arrayAdd);
-            arrayName.sort();
-            document.write("The list after add :" + "<br>");
-            for (let i = 0; i < arrayName.length; i++) {
-                document.write(arrayName[i] + "<br>");
-            }
+            do {
+                    newName = prompt("The current list: " + "\n" +
+                              arrayName + "\n" +
+                              "Enter the name you would like to add: ");
+                    arrayAdd +=  newName ;
+                    check = confirm("Would you like to add more ?");
+                    arrayName = arrayName.concat(arrayAdd);
+                    newName = "";
+                    arrayAdd = [];
+            }   while (check);
+
+                    arrayName.sort();
+                    document.write("The list after add :" + "<br>");
+                    for (let i = 0; i < arrayName.length; i++) {
+                        document.write(arrayName[i] + "<br>");
+                    }
+
         }
 
         function displayName(array) {
             document.write("Here is the current list:");
             array.sort();
             for (let i = 0; i < array.length; i++) {
-                document.write(array[i] + "<br>");
+                document.write("<br>");
+                document.write((i + 1) + ". " + array[i]);
             }
         }
 
@@ -72,25 +85,26 @@
             arrayName.sort();
             document.write("The list after edit :" + "<br>");
             for (let i = 0; i < arrayName.length; i++) {
-                document.write(arrayName[i] + "<br>");
+                document.write((i + 1) + ". " + arrayName[i] + "<br>");
             }
         }
 
         function deleteName() {
             let checkDelete = true;
             do {
-            let deleteName = prompt("Enter the name you want to delete from the list:" + "\n" + arrayName);
-            for (let i = 0; i < arrayName.length; i++) {
-                if (arrayName[i] == deleteName) {
-                    arrayName.splice(i, 1);
-                }
-            }
+                let deleteName = prompt("Enter the name you want to delete from the list:" + "\n" + arrayName);
+                for (let i = 0; i < arrayName.length; i++) {
+                    if (arrayName[i] == deleteName) {
+                        arrayName.splice(i, 1);
+                        }
+                    }
                 checkDelete = confirm("Would you like to continue deleting ?");
+                deleteName = "";
             }   while (checkDelete);
             arrayName.sort();
             document.write("The list after delete :" + "<br>");
             for (let i = 0; i < arrayName.length; i++) {
-                document.write(arrayName[i] + "<br>");
+                document.write( (i + 1) + ". " + arrayName[i] + "<br>");
             }
         }
     </script>
