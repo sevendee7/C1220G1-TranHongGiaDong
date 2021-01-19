@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Mô tả nhiệt độ</title>
 </head>
 <body>
-$END$
+    <script>
+        class Temperatur {
+            constructor(celcius) {
+                this.celcius = celcius;
+            }
+
+            convertF() {
+                return (this.celcius - 32) / 1.8;
+            }
+
+            convertK() {
+                return this.celcius + 273.15;
+            }
+        }
+
+        let temp = new Temperatur(25);
+        let f = temp.convertF();
+        let k = temp.convertK();
+        alert("25 độ C = " + f + " độ F = " + k + " độ K");
+    </script>
 </body>
 </html>

@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Xây dựng lớp hình chữ nhật</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+    class Rectangle {
+        constructor(width,height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getWidth(width) {
+            return this.width;
+        }
+
+        getHeight(height) {
+            return this.height;
+        }
+
+        getArea() {
+            return this.width * this.height;
+        }
+
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+    }
+
+    let rectangle = new Rectangle(200,400);
+    let a=rectangle.getHeight();
+    let b=rectangle.getWidth();
+    let area = rectangle.getArea();
+    let perimeter = rectangle.getPerimeter();
+    function getVisual(){
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        ctx.fillRect(350,350,a,b);
+    }
+    alert("Area of rectangle= " + area);
+    alert("Perimeter of rectangle= " + perimeter);
+    getVisual();
+</script>
 </body>
 </html>
