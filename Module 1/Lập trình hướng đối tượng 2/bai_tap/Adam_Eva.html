@@ -2,9 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Adam Eva</title>
 </head>
 <body>
-$END$
+    <script>
+        class Apple {
+
+            constructor(weight) {
+                this.weight = weight;
+            }
+
+            decreaseWeight() {
+                return this.weight--;
+            };
+
+            isEmpty() {
+                if (this.weight > 0) {
+                    return false;
+                }   else {
+                    return true;
+                }
+            };
+
+            getWeight() {
+                return this.weight;
+
+            };
+        }
+
+        class Human {
+
+            constructor(name, gender, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+
+            setName(name) {
+                this.name = name;
+            };
+
+            getName() {
+                return this.name;
+            };
+
+            setGender(gender) {
+                this.gender = gender;
+            };
+
+            setWeight(weight) {
+                this.weight = weight;
+            };
+
+            getWeight() {
+                return this.weight;
+            };
+
+            say = function (string) {
+                alert(this.name + " say: " + string);
+            };
+
+            eatApple(apple) {
+                if (!apple.isEmpty()) {
+                    apple.decreaseWeight();
+                    this.weight++;
+                }   else {
+                    alert("Apple is empty");
+                }
+            };
+
+            weighApple(apple) {
+                return  "Apple weight = " + apple.getWeight();
+            };
+        }
+
+        let human1 = new Human("Adam", "Male", 50);
+        let human2 = new Human("Eva", "Female", 30);
+        let apple1 = new Apple(10);
+        document.write(human1.name + " weight " + human1.weight + "<br>");
+        document.write(human1.name + " gender = " + human1.gender + "<br>");
+        human1.eatApple(apple1);
+        human1.say("Good apple !");
+        document.write(human1.weighApple(apple1) +"<br>");
+        document.write(human1.name + " weight " + human1.weight + "<br>");
+        document.write(human1.name + " gender = " + human1.gender + "<br>");
+        document.write(human2.name + " weight " + human2.weight + "<br>");
+        document.write(human2.name + " gender " + human2.gender + "<br>");
+        human2.eatApple(apple1);
+        human2.say("Good !");
+        document.write(human2.weighApple(apple1) +"<br>");
+        document.write(human2.name + " weight = " + human2.weight + "<br>");
+        alert(human2.getWeight());
+        alert(human1.getWeight());
+    </script>
 </body>
 </html>

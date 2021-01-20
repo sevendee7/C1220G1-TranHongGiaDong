@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Công tắc bóng đèn</title>
 </head>
 <body>
-$END$
+    <script>
+        class SwitchButton {
+            constructor(status, lamp) {
+                this.status = status;
+                this.lamp = lamp;
+            }
+
+            connectToLamp(elamp) {
+                return this.elamp;
+            }
+
+            switch() {
+                if (this.status) {
+                    alert("Switch is ON");
+                }   else {
+                    alert("Switch is OFF");
+                }
+            }
+
+            switchOn(lamp) {
+                this.status = true;
+                lamp.status = true;
+            }
+
+            switchOff(lamp) {
+                this.status = false;
+                lamp.status = false;
+            }
+        }
+
+        class ElectricLamp {
+            constructor(status) {
+                this.status = status;
+            }
+
+            electricLamp() {
+                if (this.status) {
+                    alert("Lamp is ON");
+                }   else {
+                    alert("Lamp is OFF");
+                }
+            }
+
+            turnOn() {
+                this.status = true;
+            }
+
+            turnOff() {
+                this.status = false;
+            }
+        }
+        let den = new ElectricLamp(false);
+        let congTac = new SwitchButton(true, den);
+        den.turnOn();
+        congTac.switchOff(den);
+        den.electricLamp();
+    </script>
 </body>
 </html>
