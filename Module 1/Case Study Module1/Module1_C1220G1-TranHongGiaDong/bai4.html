@@ -6,46 +6,51 @@
 </head>
 <body>
     <script>
-        let arrayName = ["Anna", "Daniel", "Bobby", "Christian", "Tommy", "Blaire"];
-        let choose = prompt("1. Add Name Customer." + "\n" +
-            "2. Delete Customer." + "\n" +
-            "Current list: " + arrayName);
-
-        switch (choose) {
-            case "1":
-                    let soLuong = parseInt(prompt("How many names you want to add: "));
-                    let arrayAdd = [];
+        let arrayName = [];
+        let exit;
+        let arrayAdd = [];
+        let choose;
+        let list = "";
+        do {
+            exit = false;
+            choose = prompt("1. Add Name Customer." + "\n" +
+                "2. Delete Customer." + "\n" +
+                "3. Exit." + "\n");
+            switch (choose) {
+                case "1":
+                    let soLuong = parseInt(prompt("Nhập số lượng customer bạn muốn thêm: "));
                     for (let i = 0; i < soLuong; i++) {
-                        arrayAdd[i] = prompt("Enter the " + (i + 1) + " name: ");
+                        arrayAdd[i] = prompt("Nhập tên thứ " + (i + 1) + ": ");
                     }
 
-                    document.write("After add names:" + "<br>");
                     arrayName = arrayName.concat(arrayAdd);
                     arrayName.sort();
-
-                        for (let i = 0; i < arrayName.length; i++) {
-                            document.write(arrayName[i] + "<br>");
-                        }
-            break;
-
-            case "2":
-                let checkDelete = true;
-                do {
-                    let deleteName = prompt("Enter the name you want to delete from the list:" + "\n" + arrayName);
                     for (let i = 0; i < arrayName.length; i++) {
-                        if (arrayName[i] == deleteName) {
-                            arrayName.splice(i, 1);
+                        list += (i+1) + ". " + arrayName[i] + "\n";
+                    }
+                    alert(list);
+                    list = "";
+                    break;
+
+                case "2":
+                    let xoa = prompt("Nhập vào tên muốn xóa khỏi danh sách: ");
+                    for (let i = 0; i < arrayName.length; i++) {
+                        if (arrayName[i] == xoa) {
+                            arrayName.splice(i,1);
                         }
                     }
-                    checkDelete = confirm("Would you like to continue deleting ?");
-                }   while (checkDelete);
-                arrayName.sort();
-                document.write("The list after delete :" + "<br>");
-                for (let i = 0; i < arrayName.length; i++) {
-                    document.write(arrayName[i] + "<br>");
-                }
-            break;
-        }
+                    arrayName.sort();
+                    for (let i = 0; i < arrayName.length; i++) {
+                        list += (i+1) + ". " + arrayName[i] + "\n";
+                    }
+                    alert(list);
+                    list = "";
+                    break;
+                case "3":
+                    exit = confirm("Bạn có muốn thoát !");
+                    break;
+            }
+        }   while (exit === false);
     </script>
 </body>
 </html>

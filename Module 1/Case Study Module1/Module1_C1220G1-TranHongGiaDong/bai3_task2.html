@@ -9,12 +9,15 @@
         let customerName = prompt("Nhập tên khách hàng: ");
         let address = prompt("Nhập địa chỉ khách hàng: ");
         let customerType = prompt("Nhập loại khách hàng: ");
+        customerName = customerName.toLowerCase();
+        address = address.toLowerCase();
+        customerType = customerType.toLowerCase();
         let arrName = Array.from(customerName.trim());
         let arrAddress = Array.from(address.trim());
         let arrType = Array.from(customerType.trim());
 
 
-        function    chuanHoa(array) {
+        function chuanHoa(array) {
             for (let i = 0; i < array.length; i++) {
                 if (array[i] === " " && array[i + 1] === " ") {
                     array.splice(i, 1);
@@ -25,12 +28,6 @@
                 array[0] = array[0].toUpperCase();
                 if (array[i] === " ") {
                     array[i + 1] = array[i + 1].toUpperCase();
-                }
-            }
-            for (let i = 0; i < array.length; i++) {
-                if (i === 0 || array[i - 1] === " ") {
-                }   else {
-                    array[i] = array[i].toLowerCase();
                 }
             }
         }

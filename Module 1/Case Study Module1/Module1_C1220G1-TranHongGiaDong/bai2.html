@@ -34,47 +34,6 @@
                 "Type of service: " + typeService + "\n" +
                 "Quantity included: " + quantityIncluded + "\n" +
                 "Rent days: " + rentDays + "\n");
-
-            let totalPay;
-            let loaiDichVu;
-            let soNgay = parseInt(rentDays);
-            let giamGia = 0;
-            if (address === "Đà Nẵng") {
-                giamGia += 20;
-            } else if (address === "Huế") {
-                giamGia += 10;
-            } else if (address === "Quảng Nam") {
-                giamGia += 5;
-            }
-
-            if (parseInt(rentDays)>=7) {
-                giamGia += 30;
-            }   else if (parseInt(rentDays)>=5) {
-                giamGia += 20;
-            }   else if ((parseInt(rentDays)>=2) &&(parseInt(rentDays))<=4) {
-                giamGia += 10;
-            }
-
-            if (typeCustomer==="Diamond") {
-                giamGia += 15;
-            }   else if (typeCustomer==="Platinum") {
-                giamGia += 10;
-            }   else if (typeCustomer==="Gold") {
-                giamGia += 5;
-            }   else if (typeCustomer==="Diamond") {
-                giamGia += 2;
-            }
-
-            if (typeService==="Villa") {
-                loaiDichVu=500;
-            } else if (typeService==="House") {
-                loaiDichVu=300;
-            }   else if (typeService==="Room") {
-                loaiDichVu=100;
-            }
-
-            totalPay = loaiDichVu * soNgay - giamGia;
-            alert("Số tiền phải trả =" + totalPay + "$");
             break;
         }
         case "2": {
@@ -88,8 +47,6 @@
                 "8. Type of service: " + typeService + "\n" +
                 "9. Quantity included: " + quantityIncluded + "\n" +
                 "10. Rent days: " + rentDays + "\n");
-
-
 
             switch (chooseEdit) {
                 case "1": {
@@ -132,6 +89,8 @@
                     rentDays = prompt("Nhập ngày thuê: ");
                     break;
                 }
+                default:
+                    alert("Failed !");
             }
             alert("Name: " + name + "\n" +
                 "CMND: " + cmnd + "\n" +
@@ -143,47 +102,6 @@
                 "Type of service: " + typeService + "\n" +
                 "Quantity included: " + quantityIncluded + "\n" +
                 "Rent days: " + rentDays + "\n");
-
-            let totalPay;
-            let loaiDichVu;
-            let soNgay = parseInt(rentDays);
-            let giamGia = 0;
-            if (address === "Đà Nẵng") {
-                giamGia += 20;
-            } else if (address === "Huế") {
-                giamGia += 10;
-            } else if (address === "Quảng Nam") {
-                giamGia += 5;
-            }
-
-            if (parseInt(rentDays)>=7) {
-                giamGia += 30;
-            }   else if (parseInt(rentDays)>=5) {
-                giamGia += 20;
-            }   else if ((parseInt(rentDays)>=2) &&(parseInt(rentDays))<=4) {
-                giamGia += 10;
-            }
-
-            if (typeCustomer==="Diamond") {
-                giamGia += 15;
-            }   else if (typeCustomer==="Platinum") {
-                giamGia += 10;
-            }   else if (typeCustomer==="Gold") {
-                giamGia += 5;
-            }   else if (typeCustomer==="Diamond") {
-                giamGia += 2;
-            }
-
-            if (typeService==="Villa") {
-                loaiDichVu=500;
-            } else if (typeService==="House") {
-                loaiDichVu=300;
-            }   else if (typeService==="Room") {
-                loaiDichVu=100;
-            }
-
-            totalPay = loaiDichVu * soNgay - giamGia;
-            alert("Số tiền phải trả =" + totalPay + "$");
             break;
         }
         case "3": {
@@ -235,11 +153,12 @@
                         "Type of room: " + typeRoom + "\n" +
                         "Type of service: " + typeService + "\n" +
                         "Quantity included: " + quantityIncluded + "\n" +
-                        "Rent days: " + rentDays + "\n" +
-                        "Số tiền phải trả =" + totalPay + "$");
+                        "Rent days: " + rentDays + "\n");
+                    alert("Số tiền phải trả sau khi giảm giá = " + totalPay + "$");
                     break;
             }
-
+            default:
+                alert("Failed !");
     }
 </script>
 </body>

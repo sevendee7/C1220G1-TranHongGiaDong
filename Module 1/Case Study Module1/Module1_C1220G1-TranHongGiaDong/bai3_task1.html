@@ -35,10 +35,11 @@
             if (email.charAt(0) === "@" || email.charAt(k) === "." || countA !== 1 && countDot !== 1) {
                 alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
                 checkEmail = true;
-                break;
-            }   else if (countA == 1 && countDot == 1) {
+            }   else if ((countA === 1 && countDot !== 1) || (countA !== 1 && countDot === 1)) {
+                alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
+                checkEmail = true;
+            }   else if (countA === 1 && countDot === 1) {
                 checkEmail = false;
-                break;
             }
         }   while (checkEmail);
 
