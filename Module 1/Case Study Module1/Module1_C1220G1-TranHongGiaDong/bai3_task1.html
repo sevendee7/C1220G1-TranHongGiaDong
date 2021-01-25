@@ -17,7 +17,6 @@
             let countA = 0;
             let countDot = 0;
             checkEmail = true;
-
                     for (let i = 0; i < long; i++) {
                         if (email.charAt(i) === "@") {
                             countA++;
@@ -25,13 +24,11 @@
                             k = j;
                         }
                     }
-
                     for (j; j <= long; j++) {
                         if (email.charAt(j) === ".") {
                             countDot++;
                         }
                     }
-
             if (email.charAt(0) === "@" || email.charAt(k) === "." || countA !== 1 && countDot !== 1) {
                 alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
                 checkEmail = true;
@@ -55,8 +52,6 @@
                 alert("Bạn nhập không đúng ! Vui lòng nhập lại. ")
             }
         }   while (!check);
-
-
     // <!--                  NHẬP NGÀY SINH                      -->
         let checkDateOfBirth;
         let dateOfBirth;
@@ -69,15 +64,11 @@
             let date = dateOfBirth.substring(0,2);
             let month = dateOfBirth.substring(3,5);
             let year = dateOfBirth.substring(6,10);
-
             checkDateOfBirth = true;
-
-
             if (dateOfBirth.charAt(2) === "/" && dateOfBirth.charAt(5) === "/") {
                 if (long === 10) {
                     checkDateOfBirth = true;
                 }
-
                 if (parseInt(month) > 0 && (parseInt(month) < 13)) {
                     checkMonth = true;
                     switch (parseInt(month)) {
@@ -88,11 +79,7 @@
                         case 8:
                         case 10:
                         case 12:
-                            if (date > 0 && date < 32) {
-                                checkDate = true;
-                            } else {
-                                checkDate = false;
-                            }
+                            checkDate = date > 0 && date < 32;
                             break;
                         case 2:
 
@@ -109,31 +96,16 @@
                                     isLeapYear = true;
                                 }
                             }
-
                             if (isLeapYear) {
-                                if (date > 0 && date < 30) {
-                                    checkDate = true;
-                                } else {
-                                    checkDate = false;
-                                }
+                                checkDate = date > 0 && date < 30;
                             } else {
-                                if (date > 0 && date < 29) {
-                                    checkDate = true;
-                                } else {
-                                    checkDate = false;
-                                }
+                                checkDate = date > 0 && date < 29;
                             }
                             break;
-
                         default:
-                            if (date > 0 && date < 31) {
-                                checkDate = true;
-                            } else {
-                                checkDate = false;
-                            }
+                            checkDate = date > 0 && date < 31;
                     }
                 }
-
                 if (parseInt(year) > 1900 && (parseInt(year) < 2021)) {
                     checkYear = true;
                 }
@@ -143,10 +115,7 @@
                 }   else {
                     alert("Bạn nhập ngày sinh không đúng ! Vui lòng nhập lại.")
                 }
-
         }   while (checkDateOfBirth);
-
-
     // <!--                  NHẬP NGÀY THUÊ & NGƯỜI ĐI KÈM                      -->
         let checkRent;
         let checkQuantity;
@@ -154,23 +123,18 @@
         let quantity;
         do {
             rentDays = prompt("Nhập số ngày thuê: ");
-            checkRent = (!isNaN(rentDays) && (rentDays == parseInt(rentDays)) && (0 < parseInt(rentDays)));
-
+            checkRent = (!isNaN(rentDays) && (Number.isInteger(parseFloat(rentDays))) && (0 < parseInt(rentDays)));
                 if (!checkRent) {
                     alert("Vui lòng nhập lại số ngày thuê hợp lệ !")
                 }
-
         }   while (!checkRent);
-
         do {
             quantity = prompt("Nhập số người đi kèm: ");
-            checkQuantity = (!isNaN(quantity) && (quantity == parseInt(quantity)) && (0 < parseInt(quantity)));
-
+            checkQuantity = (!isNaN(quantity) && (Number.isInteger(parseFloat(quantity))) && (0 < parseInt(quantity)));
             if (!checkQuantity) {
                 alert("Vui lòng nhập số người đi kèm hợp lệ !")
             }
         }   while (!checkQuantity);
-
             alert("Email: " + email + "\n" +
                 "CMND: " + cmnd + "\n" +
                 "Ngày sinh: " + dateOfBirth + "\n" +

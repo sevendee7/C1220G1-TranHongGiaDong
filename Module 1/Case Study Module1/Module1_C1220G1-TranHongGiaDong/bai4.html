@@ -13,12 +13,12 @@
         let list = "";
         do {
             exit = false;
-            choose = prompt("1. Add Name Customer." + "\n" +
-                "2. Delete Customer." + "\n" +
-                "3. Exit." + "\n");
+            choose = prompt("1. Thêm tên khách hàng." + "\n" +
+                "2. Xóa khách hàng." + "\n" +
+                "3. Thoát." + "\n");
             switch (choose) {
                 case "1":
-                    let soLuong = parseInt(prompt("Nhập số lượng customer bạn muốn thêm: "));
+                    let soLuong = parseInt(prompt("Nhập số lượng khách hàng bạn muốn thêm: "));
                     for (let i = 0; i < soLuong; i++) {
                         arrayAdd[i] = prompt("Nhập tên thứ " + (i + 1) + ": ");
                     }
@@ -35,7 +35,7 @@
                 case "2":
                     let xoa = prompt("Nhập vào tên muốn xóa khỏi danh sách: ");
                     for (let i = 0; i < arrayName.length; i++) {
-                        if (arrayName[i] == xoa) {
+                        if (arrayName[i] === xoa) {
                             arrayName.splice(i,1);
                         }
                     }

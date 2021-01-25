@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 3 - Task 1</title>
+</head>
+<body>
+<script>
+    //                      TASK 1                           //
+    // <!--                  NHẬP EMAIL                      -->
+    let checkEmail;
+    let email;
+    do {
+        email = prompt(" Enter your email: ");
+        let long = email.length;
+        let k = 0;
+        let j = 0;
+        let countA = 0;
+        let countDot = 0;
+        checkEmail = true;
+        for (let i = 0; i < long; i++) {
+            if (email.charAt(i) === "@") {
+                countA++;
+                j = i + 1;
+                k = j;
+            }
+        }
+        for (j; j <= long; j++) {
+            if (email.charAt(j) === ".") {
+                countDot++;
+            }
+        }
+        if (email.charAt(0) === "@" || email.charAt(k) === "." || countA !== 1 && countDot !== 1) {
+            alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
+            checkEmail = true;
+        }   else if ((countA === 1 && countDot !== 1) || (countA !== 1 && countDot === 1)) {
+            alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
+            checkEmail = true;
+        }   else if (countA === 1 && countDot === 1) {
+            checkEmail = false;
+        }
+    }   while (checkEmail);
+
+
+    // <!--                  NHẬP CMND                      -->
+    let check = false;
+    let cmnd = "";
+    do {
+        cmnd = prompt("Nhập số cmnd: ");
+        let long = cmnd.length;
+        check = (!isNaN(cmnd) && (Number.isInteger(parseFloat(cmnd))) && (0 <= parseInt(cmnd)) && (long===8));
+        if (!check) {
+            alert("Bạn nhập không đúng ! Vui lòng nhập lại. ")
+        }
+    }   while (!check);
+    // <!--                  NHẬP NGÀY SINH                      -->
+    let checkDateOfBirth;
+    let dateOfBirth;
+    do {
+        dateOfBirth = prompt("Enter you date of birth: (DD/MM/YYYY)");
+        let long = dateOfBirth.length;
+        let checkDate;
+        let checkMonth;
+        let checkYear;
+        let date = dateOfBirth.substring(0,2);
+        let month = dateOfBirth.substring(3,5);
+        let year = dateOfBirth.substring(6,10);
+        checkDateOfBirth = true;
+        if (dateOfBirth.charAt(2) === "/" && dateOfBirth.charAt(5) === "/") {
+            if (long === 10) {
+                checkDateOfBirth = true;
+            }
+            if (parseInt(month) > 0 && (parseInt(month) < 13)) {
+                checkMonth = true;
+                switch (parseInt(month)) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        checkDate = date > 0 && date < 32;
+                        break;
+                    case 2:
+
+                        let isLeapYear = false;
+                        let isDivisibleBy4 = parseInt(year) % 4 === 0;
+                        if (isDivisibleBy4) {
+                            let isDivisibleBy100 = parseInt(year) % 100 === 0;
+                            if (isDivisibleBy100) {
+                                let isDivisibleBy400 = parseInt(year) % 400 === 0;
+                                if (isDivisibleBy400) {
+                                    isLeapYear = true;
+                                }
+                            } else {
+                                isLeapYear = true;
+                            }
+                        }
+                        if (isLeapYear) {
+                            checkDate = date > 0 && date < 30;
+                        } else {
+                            checkDate = date > 0 && date < 29;
+                        }
+                        break;
+                    default:
+                        checkDate = date > 0 && date < 31;
+                }
+            }
+            if (parseInt(year) > 1900 && (parseInt(year) < 2021)) {
+                checkYear = true;
+            }
+        }
+        if (checkDateOfBirth && checkDate && checkMonth && checkYear) {
+            checkDateOfBirth = false;
+        }   else {
+            alert("Bạn nhập ngày sinh không đúng ! Vui lòng nhập lại.")
+        }
+    }   while (checkDateOfBirth);
+    // <!--                  NHẬP NGÀY THUÊ & NGƯỜI ĐI KÈM                      -->
+    let checkRent;
+    let checkQuantity;
+    let rentDays;
+    let quantity;
+    do {
+        rentDays = prompt("Nhập số ngày thuê: ");
+        checkRent = (!isNaN(rentDays) && (Number.isInteger(parseFloat(rentDays))) && (0 < parseInt(rentDays)));
+        if (!checkRent) {
+            alert("Vui lòng nhập lại số ngày thuê hợp lệ !")
+        }
+    }   while (!checkRent);
+    do {
+        quantity = prompt("Nhập số người đi kèm: ");
+        checkQuantity = (!isNaN(quantity) && (Number.isInteger(parseFloat(quantity))) && (0 < parseInt(quantity)));
+        if (!checkQuantity) {
+            alert("Vui lòng nhập số người đi kèm hợp lệ !")
+        }
+    }   while (!checkQuantity);
+    alert("Email: " + email + "\n" +
+        "CMND: " + cmnd + "\n" +
+        "Ngày sinh: " + dateOfBirth + "\n" +
+        "Số ngày thuê: " + rentDays + "\n" + "Số người đi kèm: " + quantity);
+    //        TASK 2      //
+    let customerName = prompt("Nhập tên khách hàng: ");
+    let address = prompt("Nhập địa chỉ khách hàng: ");
+    let customerType = prompt("Nhập loại khách hàng: ");
+    alert("Tên khách hàng: " + chuanHoa(customerName) + "\n" +
+        "Địa chỉ: " + chuanHoa(address) + "\n" +
+        "Loại khách hàng: " + chuanHoa(customerType) + "\n");
+    function chuanHoa(str) {
+        str = str.toLowerCase();
+        let array = Array.from(str.trim());
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === " " && array[i + 1] === " ") {
+                array.splice(i, 1);
+                i--;
+            }
+        }
+        for (let i = 0; i < array.length; i++) {
+            array[0] = array[0].toUpperCase();
+            if (array[i] === " ") {
+                array[i + 1] = array[i + 1].toUpperCase();
+            }
+        }
+        array = array.join("");
+        return array;
+    }
+</script>
+</body>
+</html>
