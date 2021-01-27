@@ -18,27 +18,26 @@
         let countA = 0;
         let countDot = 0;
         checkEmail = true;
-        for (let i = 0; i < long; i++) {
-            if (email.charAt(i) === "@") {
-                countA++;
-                j = i + 1;
-                k = j;
+            for (let i = 0; i < long; i++) {
+                if (email.charAt(i) === "@") {
+                    countA++;
+                    k = i + 1;
+                }
             }
-        }
-        for (j; j <= long; j++) {
-            if (email.charAt(j) === ".") {
-                countDot++;
+            for (j; j <= long; j++) {
+                if (email.charAt(j) === ".") {
+                    countDot++;
+                }
             }
-        }
-        if (email.charAt(0) === "@" || email.charAt(k) === "." || countA !== 1 && countDot !== 1) {
-            alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
-            checkEmail = true;
-        }   else if ((countA === 1 && countDot !== 1) || (countA !== 1 && countDot === 1)) {
-            alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
-            checkEmail = true;
-        }   else if (countA === 1 && countDot === 1) {
-            checkEmail = false;
-        }
+            if (email.charAt(0) === "@" || email.charAt(k) === "." || countA !== 1 && countDot !== 1) {
+                alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
+                checkEmail = true;
+            }   else if ((countA === 1 && countDot !== 1) || (countA !== 1 && countDot === 1)) {
+                alert("Bạn nhập email không đúng ! Vui lòng nhập lại.  ");
+                checkEmail = true;
+            }   else if (countA === 1 && countDot === 1) {
+                checkEmail = false;
+            }
     }   while (checkEmail);
 
 
@@ -83,7 +82,6 @@
                         checkDate = date > 0 && date < 32;
                         break;
                     case 2:
-
                         let isLeapYear = false;
                         let isDivisibleBy4 = parseInt(year) % 4 === 0;
                         if (isDivisibleBy4) {
@@ -139,7 +137,8 @@
     alert("Email: " + email + "\n" +
         "CMND: " + cmnd + "\n" +
         "Ngày sinh: " + dateOfBirth + "\n" +
-        "Số ngày thuê: " + rentDays + "\n" + "Số người đi kèm: " + quantity);
+        "Số ngày thuê: " + rentDays + "\n" +
+        "Số người đi kèm: " + quantity);
     //        TASK 2      //
     let customerName = prompt("Nhập tên khách hàng: ");
     let address = prompt("Nhập địa chỉ khách hàng: ");
