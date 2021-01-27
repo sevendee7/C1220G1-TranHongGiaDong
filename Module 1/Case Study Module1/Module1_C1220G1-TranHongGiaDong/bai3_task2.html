@@ -6,40 +6,6 @@
 </head>
 <body>
     <script>
-        let customerName = prompt("Nhập tên khách hàng: ");
-        let address = prompt("Nhập địa chỉ khách hàng: ");
-        let customerType = prompt("Nhập loại khách hàng: ");
-        customerName = customerName.toLowerCase();
-        address = address.toLowerCase();
-        customerType = customerType.toLowerCase();
-        let arrName = Array.from(customerName.trim());
-        let arrAddress = Array.from(address.trim());
-        let arrType = Array.from(customerType.trim());
-
-
-        function chuanHoa(array) {
-            for (let i = 0; i < array.length; i++) {
-                if (array[i] === " " && array[i + 1] === " ") {
-                    array.splice(i, 1);
-                    i--;
-                }
-            }
-            for (let i = 0; i < array.length; i++) {
-                array[0] = array[0].toUpperCase();
-                if (array[i] === " ") {
-                    array[i + 1] = array[i + 1].toUpperCase();
-                }
-            }
-        }
-            chuanHoa(arrName);
-            chuanHoa(arrAddress);
-            chuanHoa(arrType);
-            arrName = arrName.join("");
-            arrAddress = arrAddress.join("");
-            arrType = arrType.join("");
-            alert("Tên khách hàng: " + arrName + "\n" +
-                "Địa chỉ: " + arrAddress + "\n" +
-                "Loại khách hàng: " + arrType + "\n");
     </script>
 </body>
 </html>

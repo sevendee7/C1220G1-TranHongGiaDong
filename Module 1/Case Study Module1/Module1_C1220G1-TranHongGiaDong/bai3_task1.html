@@ -6,6 +6,7 @@
 </head>
 <body>
     <script>
+    //                      TASK 1                           //
     // <!--                  NHẬP EMAIL                      -->
         let checkEmail;
         let email;
@@ -139,6 +140,31 @@
                 "CMND: " + cmnd + "\n" +
                 "Ngày sinh: " + dateOfBirth + "\n" +
                 "Số ngày thuê: " + rentDays + "\n" + "Số người đi kèm: " + quantity);
+    //        TASK 2      //
+    let customerName = prompt("Nhập tên khách hàng: ");
+    let address = prompt("Nhập địa chỉ khách hàng: ");
+    let customerType = prompt("Nhập loại khách hàng: ");
+    alert("Tên khách hàng: " + chuanHoa(customerName) + "\n" +
+        "Địa chỉ: " + chuanHoa(address) + "\n" +
+        "Loại khách hàng: " + chuanHoa(customerType) + "\n");
+    function chuanHoa(str) {
+        str = str.toLowerCase();
+        let array = Array.from(str.trim());
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === " " && array[i + 1] === " ") {
+                array.splice(i, 1);
+                i--;
+            }
+        }
+        for (let i = 0; i < array.length; i++) {
+            array[0] = array[0].toUpperCase();
+            if (array[i] === " ") {
+                array[i + 1] = array[i + 1].toUpperCase();
+            }
+        }
+        array = array.join("");
+        return array;
+    }
     </script>
 </body>
 </html>
